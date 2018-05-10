@@ -1,7 +1,7 @@
 {
-  "name": "compass",
-  "version": "1.0.0",
-  "description": "Xuetangx data visualization UI",
+  "name": "x-chart",
+  "version": "0.1.0",
+  "description": "Draggable & resizable data visualization dashboard",
   "author": "yugasun <yuga_sun@163.com>",
   "private": true,
   "scripts": {
@@ -9,7 +9,8 @@
     "start": "npm run dev",
     "build": "node build/build.js",
     "build:report": "npm run build --report",
-    "lint": "eslint --fix --ext .js,.vue src"
+    "lint": "eslint --fix --ext .js,.vue src",
+    "deploy": "npm run build && gh-pages -d dist --remote origin"
   },
   "dependencies": {
     "element-ui": "^2.3.4",
@@ -46,6 +47,7 @@
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.11",
     "friendly-errors-webpack-plugin": "^1.6.1",
+    "gh-pages": "^1.1.0",
     "html-webpack-plugin": "^3.0.6",
     "mockjs": "^1.0.1-beta3",
     "node-notifier": "^5.2.1",
