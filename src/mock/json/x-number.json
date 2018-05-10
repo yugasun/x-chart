@@ -1,0 +1,20 @@
+{
+  "data": {
+    "chart_type": "x-number",
+    "columns": [
+      {
+        "type": "y",
+        "field": "enroll_number",
+        "name": "选课人数",
+        "unit": "人"
+      }
+    ],
+    "rows": [
+      {
+        "enroll_number": 32778
+      }
+    ]
+  },
+  "error_code": 0,
+  "error_msg": ""
+}
