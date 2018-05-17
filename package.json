@@ -10,7 +10,10 @@
     "build": "node build/build.js",
     "build:report": "npm run build --report",
     "lint": "eslint --fix --ext .js,.vue src",
-    "deploy": "npm run build && gh-pages -d dist --remote origin"
+    "deploy": "npm run build && gh-pages -d dist --remote origin",
+    "docker:build": "docker build -t x-chart .",
+    "docker:run": "docker run -itd -p 8080:80 --name=x-chart x-chart",
+    "docker:exec": "docker exec -it x-chart bash"
   },
   "dependencies": {
     "element-ui": "^2.3.4",
@@ -23,6 +26,7 @@
     "vuex": "^3.0.1"
   },
   "devDependencies": {
+    "@koa/cors": "^2.2.1",
     "autoprefixer": "^8.1.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.2",
@@ -49,6 +53,8 @@
     "friendly-errors-webpack-plugin": "^1.6.1",
     "gh-pages": "^1.1.0",
     "html-webpack-plugin": "^3.0.6",
+    "koa": "^2.5.1",
+    "koa-router": "^7.4.0",
     "mockjs": "^1.0.1-beta3",
     "node-notifier": "^5.2.1",
     "node-sass": "^4.7.2",
