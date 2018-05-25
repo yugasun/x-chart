@@ -4,7 +4,7 @@
     :style="style"
     >
     <h3 class="title">{{ title }}</h3>
-    <span class="number">{{ loading ? '加载中...' : number }}</span>
+    <span class="number">{{ loading ? 'Loading...' : number }}</span>
     <span class="unit">{{ unit }}</span>
   </div>
 </template>

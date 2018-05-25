@@ -1,7 +1,7 @@
 <template>
    <echarts
       v-loading="loading"
-      element-loading-text="玩儿命加载中..."
+      element-loading-text="Loading..."
       :theme="theme"
       ref="chart"
       class="chart"

@@ -1,6 +1,6 @@
 const tagReg = /<\/?([^<|^>]*)>/g
 /**
- * 截断字符串
+ * string cut
  *
  * @export
  * @param {any} value
@@ -41,11 +41,11 @@ export function cutStr (value, limit) {
 }
 
 /**
- * 深拷贝简易方法
+ * simple version deep copy
  * @param {Object} obj
  */
 export function deepClone(obj) {
-  // 这里obj中不能包含特殊类型值：undefined,NaN,function类型值
+  // obj not contain special type like：undefined,NaN,function
   return JSON.parse(JSON.stringify(obj))
 }
 

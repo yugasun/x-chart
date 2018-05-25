@@ -3,7 +3,7 @@
     class="dashboard"
     ref='dashboard'
     v-loading.fullscreen="loading"
-    element-loading-text="玩命加载中..."
+    element-loading-text="Loading..."
     >
     <grid-layout
       :layout="slices"
@@ -39,7 +39,7 @@
       </grid-item>
     </grid-layout>
 
-    <!-- 专注模式mask -->
+    <!-- focus mode mask -->
     <div class="grip-modal" v-show="showModal"></div>
   </div>
 </template>
@@ -79,14 +79,10 @@ export default {
       },
 
       /**
-       * 请求slices接口，数据正在加载，置为 true
-       * 为了触发 GridLayout的 compact item 方法
-       * 当加载结束置为false，禁用 GridLayout 的compact方法，防止布局错乱
-       * 见：https://github.com/yugasun/vue-grid-layout/blob/a7d39f28425cee6a6176388daea40e8c8d9c4826/src/GridLayout.vue#L206-L208
-       * 此处代码为compass项目定制开发
+       * https://github.com/yugasun/vue-grid-layout/blob/a7d39f28425cee6a6176388daea40e8c8d9c4826/src/GridLayout.vue#L206-L208
        */
       layoutUpdating: false,
-      slices: [], // 图表模块列表
+      slices: [], // charts modules
     };
   },
   components: {
@@ -95,7 +91,7 @@ export default {
     Slice,
   },
   methods: {
-    // 线性渐变
+    // create gradient background
     gridItemBackground(type, start, stop) {
       return (
         {
@@ -107,14 +103,13 @@ export default {
     },
 
     /** *
-     * 获取dashboard模块
+     * Get dashboard modules
      */
     async getDashboard() {
       this.loading = true;
       this.layoutUpdating = true;
       try {
         const res = await this.$http.get('/dashboard');
-        console.log('dashboard', res);
         this.slices = res.data.slices;
         this.loading = false;
       } catch (e) {
@@ -124,24 +119,22 @@ export default {
     },
 
     /**
-     * 计算弹出后的相关位置参数
+     * Calculate popup slice position
      */
     calPopPosition(expandTarget) {
-      // 这里固定设置弹出后的列数为：30，总列数为36
+      // set popup number of columns
       const popW = 30;
-      // 按照原比例计算弹出后行高数
-      // const popH = this.cachePosition.h * popW / this.cachePosition.w
+      // set popup number of rows
       const popH = (popW * 9) / 16;
-      // 计算每列实际宽度
+      // calculate real width for every column
       const colWidth = (expandTarget.$parent.width - (this.gridMargin[0] * (this.gridColNum + 1))) / this.gridColNum;
-      // 计算弹出后实际宽度
+      // calculate real width for popup slice
       const width = Math.round((colWidth * popW) + (Math.max(0, popW - 1) * this.gridMargin[0]));
-      // 计算弹出后实际高度
+      // calculate real height for popup slice
       const height = Math.round((this.gridRowHeight * popH) + (Math.max(0, popH - 1) * this.gridMargin[1]));
 
-      // 通过top的计算公式来逆推 行高数 popY
       const winH = window.innerHeight;
-      // 计算距离顶部高度，还需针对dashboard， 减去其距离顶部高度
+      // calculate popup slice top
       const top = Math.round((winH - height) / 2) - this.$refs.dashboard.getBoundingClientRect().top;
 
       // height: Math.round(this.rowHeight * h + Math.max(0, h - 1) * this.margin[1])
@@ -158,7 +151,7 @@ export default {
       };
     },
     /**
-     * 缓存弹出前位置信息
+     * cache popup slice position
      */
     storePosition(item) {
       this.cachePosition = {
@@ -171,7 +164,7 @@ export default {
       };
     },
     /**
-     * 恢复弹出前位置信息
+     * restore popup slice position
      */
     restorePosition(item) {
       item.width = this.cachePosition.width;
@@ -184,7 +177,7 @@ export default {
     },
 
     /**
-     * 进出 专注模式
+     * go into focus mode
      */
     handleFocus({ expand, targetRef }) {
       const expandTarget = this.$refs[targetRef][0];

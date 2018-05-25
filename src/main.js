@@ -21,10 +21,10 @@ import store from './store';
 import GlobalComponents from './components/global-components';
 import { jsonProp } from './utils/tool';
 
-// 引入错误处理
+// error handler
 import './errorLog';
 
-// 模拟数据
+// mock data
 import './mock';
 
 Vue.config.productionTip = false;
@@ -39,7 +39,6 @@ Vue.use(VueAxiosPlugin, {
     },
   ],
   resHandleFunc: (response) => {
-    console.log('response', response);
     const data = response.data;
     return {
       status: response.status || 500,

@@ -8,6 +8,10 @@ export default {
       type: Boolean,
       default: true,
     },
+    legend: {
+      type: Boolean,
+      default: true,
+    },
     apiData: {
       type: Object,
       default() {
@@ -21,14 +25,6 @@ export default {
       type: String,
       default: '',
     },
-    width: {
-      type: [String, Number],
-      default: '',
-    },
-    height: {
-      type: [String, Number],
-      default: '',
-    },
     colorStart: {
       type: String,
       default: '#7956EC',
@@ -40,15 +36,18 @@ export default {
   },
   data() {
     return {
-      // 是否含有x/y 坐标轴，对于 pie,relation 图形，需要设置为false
+      /**
+       * whether has axis,
+       * for pie,relation chart need set false
+       */
       hasAxis: true,
 
       chart: null,
-      // 图形绘制方向
+      // render direction
       direction: 'vertical',
       /**
-       * vue-echarts 组件初始化配置，
-       * 可以切换 canvas 和 svg 两种绘制模式
+       * init options for vue-echarts
+       * switch render mode between canvas and svg
        */
       initOptions: { renderer: 'canvas' },
       xColumn: {},
@@ -58,9 +57,6 @@ export default {
     };
   },
   computed: {
-    /**
-     * 柱子渐变风格控制
-     */
     itemStyle() {
       const defaultItemStyle = {
         normal: {
@@ -71,11 +67,10 @@ export default {
             x2: 1,
             y2: 0,
             colorStops: [{
-              offset: 0, color: this.colorStart, // 0% 处的颜色
+              offset: 0, color: this.colorStart, // 0%
             }, {
-              offset: 1, color: this.colorEnd, // 100% 处的颜色
+              offset: 1, color: this.colorEnd, // 100%
             }],
-            globalCoord: false, // 缺省为 false
           },
         },
       };
@@ -96,17 +91,18 @@ export default {
         }
       },
     },
-    width(val, oldVal) {
-      this.resizeChart();
-    },
-    height(val, oldVal) {
-      this.resizeChart();
-    },
     colorStart() {
       this.initChart();
     },
     colorEnd() {
       this.initChart();
+    },
+    legend(val, oldVal) {
+      this.chart.setOption({
+        legend: {
+          show: val,
+        },
+      });
     },
   },
   methods: {
@@ -115,19 +111,19 @@ export default {
     },
 
     /**
-     * echarts instance init 事件
+     * echarts instance init event
      * @param {object} chart echartsInstance
      */
     chartInit(chart) {
       this.chart = chart;
-      // 这里必须在 nextTick 后 resize chart
+      // must resize chart in nextTick
       this.$nextTick(() => {
         this.resizeChart();
       });
     },
 
     /**
-     * emit chart component init 事件
+     * emit chart component init event
      */
     emitInit() {
       this.$emit('init', {
@@ -145,7 +141,7 @@ export default {
     },
 
     /**
-     * 转换图形数据成 echarts option 格式
+     * convert to echarts option format
      */
     convertData() {
       const data = this.apiData;
@@ -184,14 +180,13 @@ export default {
     },
 
     /**
-     * 生成符合 echarts 配置规则的 series 数组元素
-     * @param {string} type 图形组件类型
-     * @param {string} name 图形组件title
-     * @param {Array} data 数据
-     * @param {object} itemStyle 数据项绘制风格
-     * @param {string,number} zoom 是否可以下钻
+     * create series array suit for echarts options
+     * @param {string} type chart type
+     * @param {string} name chart title
+     * @param {Array} data chart data
+     * @param {object} itemStyle chart item render style
      */
-    createEchartsSeriesItem(type, name, data, itemStyle, zoom) {
+    createEchartsSeriesItem(type, name, data, itemStyle) {
       const seriesItem = {
         name,
         data,
@@ -275,7 +270,7 @@ export default {
     },
 
     /**
-     * 初始化图形
+     * init chart
      */
     initChart() {
       this.convertData();
@@ -287,10 +282,9 @@ export default {
         } else {
           this.options.xAxis[0].data = this.categories;
         }
-        // 对于多维图形，不设置渐变，对于单维配置渐变
+        // set gradient for single measure
         itemStyle = this.seriesData.length > 1 ? {} : this.itemStyle;
       } else {
-        // 对于非坐标图形，不设置渐变
         itemStyle = {};
       }
 
@@ -300,11 +294,8 @@ export default {
           this.yColumns[index].name,
           data,
           itemStyle,
-          this.apiData.zoom,
         );
         this.options.series.push(series);
-        // 这里注释，让echarts自动生成 legend 数据
-        // this.options.legend.data.push(this.yColumns[index].name);
       });
     },
 

@@ -3,7 +3,12 @@
     <header ref="header" class="card-header" :class="{center: item.chart_type === 'x-number'}">
       <span class="card-title" v-if="item.chart_type !== 'x-number'">{{ item.title }}</span>
       <div class="right-buttons">
-        <ExpandBtn
+        <legend-btn
+          class="x-btn"
+          v-if="canLegendType.indexOf(item.chart_type) !== -1"
+          :legend.sync="legend"
+          />
+        <expand-btn
           class="x-btn"
           @expand="handleFocus"
           :expand-target="item.i"
@@ -13,8 +18,7 @@
     <component
       :loading="loading"
       :is="ChartComponentMap[item.chart_type]"
-      :width="item.width"
-      :height="item.height"
+      :legend="legend"
       :api-data="apiData"
       :title="item.title"
       :colorStart="colorStart"
@@ -25,6 +29,7 @@
 </template>
 <script>
 import ExpandBtn from '@/components/common/expand-btn';
+import LegendBtn from '@/components/common/legend-btn';
 
 import {
   XLine,
@@ -62,8 +67,12 @@ export default {
       chart: null,
       chartData: {},
 
+      legend: true, // whether show legend
+
       apiData: null,
       ChartComponentMap,
+
+      canLegendType: ['x-line', 'x-line-area', 'x-bar', 'x-hbar', 'x-pie', 'x-circle'],
     };
   },
   components: {
@@ -75,13 +84,10 @@ export default {
     XCircle,
     XNumber,
     ExpandBtn,
+    LegendBtn,
   },
   methods: {
-    /**
-     * 获取图形数据
-     * @param {boolean} zoom 是否下钻
-     */
-    async getData(zoom = false) {
+    async getData() {
       this.loading = true;
       try {
         const res = await this.$http.get('/chart_data', {
@@ -96,14 +102,14 @@ export default {
     },
 
     /**
-     * 点击聚焦模式
+     * handle focus click
      */
     handleFocus(payload) {
       this.$emit('expand', payload);
     },
 
     /**
-     * 图形初始化
+     * chart initialed
      */
     chartInit({ chart, chartData }) {
       this.chart = chart;

@@ -3,7 +3,7 @@
     <!-- <img src="~@/assets/logo.png" alt="" class="logo"> -->
     <h1>x-chart</h1>
     <div class="wrapper select-wrapper">
-      <!-- 主题选择 -->
+      <!-- Theme select -->
       <el-select v-model="themeIndex">
         <el-option
           v-for="(t, index) in themes"

@@ -62,10 +62,10 @@ const webpackConfig = merge(baseWebpackConfig, {
     // see https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({
       filename: config.build.index,
-      template: 'index.html',
-      inject: true,
+      template: 'index.cache.html',
+      inject: false,
       favicon: path.join(__dirname, '../favicon.ico'),
-      title: 'vue-element-admin',
+      title: 'x-chart',
       minify: {
         removeComments: true,
         collapseWhitespace: true,

@@ -1,9 +1,9 @@
 @import './_ionicons';
 
-// http://element-cn.eleme.io/#/zh-CN/component/custom-theme#zai-xiang-mu-zhong-gai-bian-scss-bian-liang
-/* 改变主题色变量 */
+// http://element-cn.eleme.io/#/en-US/component/custom-theme
+/* theme color */
 $--color-primary: #198BF6;
-/* 改变 icon 字体路径变量，必需 */
+/* icon font path, required */
 $--font-path: '~element-ui/lib/theme-chalk/fonts';
 
 @import '~element-ui/packages/theme-chalk/src/index.scss';

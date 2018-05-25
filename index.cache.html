@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <!-- inject bowl.js -->
+    <script src="./static/bowljs/bowl.min.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <p>Loading...</p>
+    </div>
+    <script>
+    <% var resources = [];
+    var keys = ["manifest", "vendor", "app"];
+    var dependecies = [
+      0,
+      [keys[0]],
+      [keys[0], keys[1]],
+    ];
+    // css
+    for (var css in htmlWebpackPlugin.files.css) {
+      resources.push({
+        /**
+         * Add prefix '/x-chart' just for gh-pages deployment,
+         * For your own project remove it.
+         */
+        url:  '/x-chart' + htmlWebpackPlugin.files.css[css],
+        key: 'style',
+      });
+    }
+    // js
+    var i = -1;
+    for (var chunk in htmlWebpackPlugin.files.chunks) {
+      i++;
+      resources.push({
+        /**
+         * Add prefix '/x-chart' just for gh-pages deployment,
+         * For your own project remove it.
+         */
+        url: '/x-chart' + htmlWebpackPlugin.files.chunks[chunk].entry,
+        key: keys[i],
+        dependencies: dependecies[i] || [],
+      });
+    } %>
+    /**
+     * https://github.com/ElemeFE/bowl
+     * Using Bowl for cache
+     */
+    var b = new Bowl();
+    b.add(<%= JSON.stringify(resources) %>);
+    b.inject();
+    </script>
+  </body>
+</html>
