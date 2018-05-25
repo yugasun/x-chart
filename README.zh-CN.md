@@ -6,7 +6,7 @@
 
 ## 简介
 
-`x-chart` 是一个可拖拽/放大缩小的数据可视化系统。基于 [Vue.js](https://github.com/vuejs/vue), [vue-echarts](https://github.com/ecomfe/vue-echarts) 和 [vue-grid-layout](https://github.com/yugasun/vue-grid-layout/tree/pro/compass) 开发。
+`x-chart` 是一个可拖拽/放大缩小的数据可视化系统。基于 [Vue.js](https://github.com/vuejs/vue), [vue-echarts](https://github.com/ecomfe/vue-echarts) 和 [vue-grid-layout](https://github.com/yugasun/vue-grid-layout/tree/pro/compass) 开发。
 
 ## 开发
 
@@ -33,10 +33,10 @@ npm run docker:run
 
 ## 功能
 
-- [x] 可配置的展示板: 所有模块均基于接口渲染。
+- [x] 可配置的展示板: 所有模块均基于接口渲染。
 - [x] 可拖拽和放大缩小的图形模块。
-- [x] _**使用 [bowl.js](https://github.com/ElemeFE/bowl) 对前端静态文件（js，css）进行缓存，注入到 localStorage。**_
-- [x] 自定义和美化的echarts图形。
+- [x] _**使用 [bowl.js](https://github.com/ElemeFE/bowl) 对前端静态文件（js，css）进行缓存，注入到 localStorage。**_
+- [x] 自定义和美化的echarts图形。
 - [x] 使用 [mockjs](https://github.com/nuysoft/Mock) 进行前端数据模拟。
 - [x] Docker部署方案.
 
@@ -46,15 +46,8 @@ npm run docker:run
 
 [Online Preview](http://yugasun.github.io/x-chart).
 
-## Donate
-
-
-
 ## License
 
 [MIT](https://github.com/yugasun/x-chart/blob/master/LICENSE)
 
 Copyright (c) 2018-present yugasun
-
-
-

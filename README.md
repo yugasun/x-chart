@@ -45,15 +45,8 @@ npm run docker:run
 
 [Online Preview](http://yugasun.github.io/x-chart).
 
-## Donate
-
-
-
 ## License
 
 [MIT](https://github.com/yugasun/x-chart/blob/master/LICENSE)
 
 Copyright (c) 2018-present yugasun
-
-
-
