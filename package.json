@@ -11,7 +11,7 @@
     "build:cache": "node build/build-cache.js",
     "build:report": "npm run build --report",
     "lint": "eslint --fix --ext .js,.vue src",
-    "deploy": "npm run build:cache && gh-pages -d dist --remote origin"
+    "deploy": "npm run build && gh-pages -d dist --remote origin"
   },
   "dependencies": {
     "element-ui": "^2.3.4",
