@@ -8,10 +8,9 @@
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
     "build": "node build/build.js",
-    "build:cache": "node build/build-cache.js",
     "build:report": "npm run build --report",
     "lint": "eslint --fix --ext .js,.vue src",
-    "deploy": "npm run build && gh-pages -d dist --remote origin"
+    "deploy": "gh-pages -d dist --remote origin"
   },
   "dependencies": {
     "element-ui": "^2.3.4",
