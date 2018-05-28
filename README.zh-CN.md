@@ -42,7 +42,7 @@ npm run docker:run
 
 ## Demo
 
-![x-chart](./demo/1.gif)
+![x-chart](./demo/1.png)
 
 [Online Preview](http://yugasun.github.io/x-chart).
 
