@@ -2,7 +2,7 @@
   <div class="wrapper index-page">
     <!-- <img src="~@/assets/logo.png" alt="" class="logo"> -->
     <h1>x-chart</h1>
-    <div class="wrapper select-wrapper">
+    <div class="select-wrapper">
       <!-- Theme select -->
       <el-select v-model="themeIndex">
         <el-option
@@ -46,10 +46,9 @@ export default {
   width: 100px;
 }
 .select-wrapper {
-  width: 1140px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   margin-top: 15px;
 }
