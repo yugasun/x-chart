@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - '7'
+  - '9'
 
 compiler: gcc
 
@@ -16,4 +16,3 @@ install:
   - yarn install
 script:
   - yarn lint && yarn build
-  - yarn deploy

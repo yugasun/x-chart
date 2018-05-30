@@ -9,7 +9,7 @@
     "start": "npm run dev",
     "build": "node build/build.js",
     "build:report": "npm run build --report",
-    "lint": "eslint --fix --ext .js,.vue src",
+    "lint": "eslint --ext .js,.vue src",
     "deploy": "gh-pages -d dist --remote origin",
     "docker:build": "docker build -t x-chart .",
     "docker:run": "docker run -itd -p 8080:80 --name=x-chart x-chart",
