@@ -2,6 +2,24 @@
   <img width="80" src="./logo.png">
 </p>
 
+<p align="center">
+  <a href="https://github.com/vuejs/vue">
+    <img src="https://img.shields.io/badge/vue-2.5.16-brightgreen.svg" alt="vue">
+  </a>
+  <a href="https://github.com/apache/incubator-echarts">
+    <img src="https://img.shields.io/badge/echarts-4.1.0-brightgreen.svg" alt="echarts">
+  </a>
+  <a href="https://github.com/jbaysolutions/vue-grid-layout">
+    <img src="https://img.shields.io/badge/vue--grid--layout-2.1.13-brightgreen.svg" alt="vue-grid-layout">
+  </a>
+  <a href="https://travis-ci.org/yugasun/x-chart" rel="nofollow">
+    <img src="https://travis-ci.org/yugasun/x-chart.svg?branch=dev" alt="Build Status">
+  </a>
+  <a href="https://github.com/yugasun/x-chart/blob/master/LICENSE">
+    <img src="https://img.shields.io/github/license/mashape/apistatus.svg" alt="license">
+  </a>
+</p>
+
 简体中文 | [English](./README.md)
 
 ## 简介

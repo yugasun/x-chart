@@ -1,0 +1,19 @@
+language: node_js
+node_js:
+  - '7'
+
+compiler: gcc
+
+os:
+  - linux
+
+env:
+  global:
+    - GH_REF: github.com/yugasun/x-chart.git
+    - secure: lSQ/WyYV8zbRFK/Ytcgvs760fF4uMAsnXmOWKBSbARG646hhKfLGA+Iz+3uSH89EEmRlRe8qz8lgtFTtddEJsLnWm2TiO/Ea9/RNm2vIXk7YiXIsZrStMGnBilCyjUM3eKHdZI/ujkl4rlhaSx0iPlDVV+XmiNJRoxyOmZ/DfkOmZ4VIEEopJMLtu63/DWu/iEExsvJCUvbmGi9p523ch2QUxRB3/6Nnt85FtaW4naM8WwQ1s7mh7yjIdAjrVx2hZsvgZVTLIdg1lfReCWtBl4JV58gdYAW/5DOC8ohHAHaPyNc8AsDW8azv46x45u9PHS8z14VnERgJp0p06ZFs1pvr8bUF5Jli5IkN7njzxR6Ya+1o0/UYbcPKfSwyeGUCnGTjJTBTYqLferb0/td+iPK4aASutB9BzlRzUTyV/ceduey+ItTKttzSK1i+myd6D/jfyM8bolgNjVv9I6iSr8kHO9lTPFhQsHbllLVJpzzQhO9Ksk9IvPljF28LjaNbkM7oLitx8HrIqesTBILCCqjZPlsKzSjNassUUJ9G8bnahnpgyQO6c06RtBoAy0aiwFk8RPHiINul3HtRqDcGC8skdJ4SR/kldxkNi6P5eG1ZVD0uNPsZ3ck8KBrjKsB8JTVQlf5/OwCACg4tYPD6EH3zGNOsHu2YvA/JDE3Y/FI=
+
+install:
+  - yarn install
+script:
+  - yarn lint && yarn build
+  - yarn deploy
