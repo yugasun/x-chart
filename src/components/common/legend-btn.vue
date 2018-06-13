@@ -1,7 +1,7 @@
 <template>
   <el-tooltip :content="`${legend ? 'Hide' : 'Show'} legend`" placement="top">
     <div class="x-legend" @click="switchLegend">
-      <i :class="legend ? 'ion-eye' : 'ion-eye-disabled'"></i>
+      <i :class="legend ? 'icon-smile' : 'icon-frown'"></i>
     </div>
   </el-tooltip>
 </template>

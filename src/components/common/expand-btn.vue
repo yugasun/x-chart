@@ -1,7 +1,10 @@
 <template>
   <div class="x-expand" @click="expandClick">
     <el-tooltip :content="expanded ? 'Exit focus mode' : 'Into focus mode'" placement="top">
-      <i class="icon" :class="{'ion-arrow-expand': !expanded, 'ion-arrow-shrink': expanded}" :style="{color: white ?  '#fff' : '#888'}"></i>
+      <i
+        class="icon"
+        :class="{'icon-fullscreen': !expanded, 'icon-fullscreen-exit': expanded}"
+        :style="{color: white ?  '#fff' : '#888'}"></i>
     </el-tooltip>
   </div>
 </template>

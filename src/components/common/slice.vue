@@ -8,6 +8,10 @@
           v-if="canLegendType.indexOf(item.chart_type) !== -1"
           :legend.sync="legend"
           />
+        <sync-btn
+          class="x-btn"
+          @sync="getData"
+          :white="item.chart_type === 'x-number'"/>
         <expand-btn
           class="x-btn"
           @expand="handleFocus"
@@ -30,6 +34,7 @@
 <script>
 import ExpandBtn from '@/components/common/expand-btn';
 import LegendBtn from '@/components/common/legend-btn';
+import SyncBtn from '@/components/common/sync-btn';
 
 import {
   XLine,
@@ -85,6 +90,7 @@ export default {
     XNumber,
     ExpandBtn,
     LegendBtn,
+    SyncBtn,
   },
   methods: {
     async getData() {
@@ -117,7 +123,7 @@ export default {
     },
   },
   mounted() {
-    this.getData(false);
+    this.getData();
   },
 };
 </script>

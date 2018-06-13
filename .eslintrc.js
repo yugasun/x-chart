@@ -57,5 +57,6 @@ module.exports = {
     'no-console': 'off',
     'no-bitwise': 'off',
     'prefer-destructuring': 'off',
+    'linebreak-style': 'off',
   }
 }
