@@ -8,6 +8,7 @@
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
     "build": "node build/build.js",
+    "build:git-page": "GIT_PAGE=true node build/build.js",
     "build:report": "npm run build --report",
     "lint": "eslint --ext .js,.vue src",
     "deploy": "gh-pages -d dist --remote origin",
@@ -20,7 +21,7 @@
     "normalize.css": "^8.0.0",
     "vue": "^2.5.16",
     "vue-axios-plugin": "^1.3.0",
-    "vue-echarts": "https://github.com/yugasun/vue-echarts#pro/compass",
+    "vue-echarts": "^3.1.3",
     "vue-grid-layout": "https://github.com/yugasun/vue-grid-layout#pro/compass",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"

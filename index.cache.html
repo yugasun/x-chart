@@ -15,6 +15,7 @@
     </div>
     <script>
     <% var resources = [];
+    var prefix = htmlWebpackPlugin.options.gitPage ? '/x-chart' : '';
     var keys = ["manifest", "vendor", "app"];
     var dependecies = [
       0,
@@ -28,7 +29,7 @@
          * Add prefix '/x-chart' just for gh-pages deployment,
          * For your own project remove it.
          */
-        url:  '/x-chart' + htmlWebpackPlugin.files.css[css],
+        url: prefix + htmlWebpackPlugin.files.css[css],
         key: 'style',
       });
     }
@@ -41,7 +42,7 @@
          * Add prefix '/x-chart' just for gh-pages deployment,
          * For your own project remove it.
          */
-        url: '/x-chart' + htmlWebpackPlugin.files.chunks[chunk].entry,
+        url: prefix + htmlWebpackPlugin.files.chunks[chunk].entry,
         key: keys[i],
         dependencies: dependecies[i] || [],
       });

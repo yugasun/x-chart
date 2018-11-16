@@ -26,7 +26,6 @@
         :ref="item.i"
         :style="gridItemBackground(item.chart_type, colorStart, colorEnd)"
         dragIgnoreFrom=".echarts,.x-number,.card-title,.right-buttons"
-        @init="initEvent"
         @resized="resizedEvent"
         @moved="movedEvent"
         class="chart-item"

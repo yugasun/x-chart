@@ -13,6 +13,8 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 const env = require('../config/prod.env')
 
+const buildForGitPage = process.env.GIT_PAGE;
+
 const webpackConfig = merge(baseWebpackConfig, {
   module: {
     rules: utils.styleLoaders({
@@ -66,6 +68,7 @@ const webpackConfig = merge(baseWebpackConfig, {
       inject: false,
       favicon: path.join(__dirname, '../favicon.ico'),
       title: 'x-chart',
+      gitPage: buildForGitPage,
       minify: {
         removeComments: true,
         collapseWhitespace: true,
