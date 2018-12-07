@@ -9,6 +9,7 @@
     "build": "vue-cli-service build",
     "build:git-page": "cross-env GIT_PAGE=true vue-cli-service build",
     "lint": "vue-cli-service lint",
+    "test": "npm run lint",
     "deploy": "npm run build:git-page && gh-pages -d dist --remote origin",
     "docker:build": "docker build -t x-chart .",
     "docker:run": "docker run -itd -p 8080:80 --name=x-chart x-chart",
