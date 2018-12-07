@@ -4,13 +4,10 @@
 
 <p align="center">
   <a href="https://github.com/vuejs/vue">
-    <img src="https://img.shields.io/badge/vue-2.5.16-brightgreen.svg" alt="vue">
+    <img src="https://img.shields.io/badge/vue-2.5.17-brightgreen.svg" alt="vue">
   </a>
   <a href="https://github.com/apache/incubator-echarts">
     <img src="https://img.shields.io/badge/echarts-4.1.0-brightgreen.svg" alt="echarts">
-  </a>
-  <a href="https://github.com/jbaysolutions/vue-grid-layout">
-    <img src="https://img.shields.io/badge/vue--grid--layout-2.1.13-brightgreen.svg" alt="vue-grid-layout">
   </a>
   <a href="https://travis-ci.org/yugasun/x-chart" rel="nofollow">
     <img src="https://travis-ci.org/yugasun/x-chart.svg?branch=dev" alt="Build Status">
@@ -25,6 +22,8 @@
 ## Introduction
 
 `x-chart` is a draggable & resizable data visualization dashboard. Based on [Vue.js](https://github.com/vuejs/vue), [vue-echarts](https://github.com/ecomfe/vue-echarts) and [vue-grid-layout](https://github.com/yugasun/vue-grid-layout/tree/pro/compass).
+
+> **Notice** This version is rewrote by `typescript`, if you want the old version by `javascript`, you can checkout tag `v0.1.2`.
 
 ## Develop
 
@@ -41,6 +40,9 @@ npm run dev
 # build
 npm run build
 
+# deploy for Github page
+npm run deploy
+
 # build docker image
 npm run docker:build
 
@@ -56,6 +58,7 @@ npm run docker:run
 - [x] Customized and beautify charts using echarts.
 - [x] Frontend data mock demo using [mockjs](https://github.com/nuysoft/Mock).
 - [x] Docker deploy.
+- [x] _**Refactor with Typescript**_.
 
 ## Demo
 
@@ -65,6 +68,6 @@ npm run docker:run
 
 ## License
 
-[MIT](https://github.com/yugasun/x-chart/blob/master/LICENSE)
+[MIT](./LICENSE)
 
 Copyright (c) 2018-present yugasun

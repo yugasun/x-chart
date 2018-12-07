@@ -1,12 +1,12 @@
 {
   "data": {
-    "chart_type": "x-number",
+    "chartType": "x-number",
     "columns": [
       {
         "type": "y",
         "field": "enroll_number",
-        "name": "选课人数",
-        "unit": "人"
+        "name": "Enroll Number",
+        "unit": "Persion"
       }
     ],
     "rows": [

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <!-- inject bowl js -->
+    <script src="./static/bowljs/bowl.min.js"></script>
+  </head>
+  <body>
+    <noscript>
+      <strong
+        >We're sorry but x-chart doesn't work properly without JavaScript
+        enabled. Please enable it to continue.</strong
+      >
+    </noscript>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+
+    <script>
+      <% var resources = [];
+      var prefix = htmlWebpackPlugin.options.gitPage ? '/x-chart' : '';
+      var keys = ["chunk_vendors", "app"];
+      var dependecies = [
+        0,
+        [keys[0]],
+      ];
+      // css
+      var cssFiles = htmlWebpackPlugin.files.css;
+      for (var i = 0; i < cssFiles.length; i++) {
+        resources.push({
+          /**
+           * Add prefix '/x-chart' just for gh-pages deployment,
+           * For your own project remove it.
+           */
+          url: prefix + cssFiles[i],
+          key: 'style_' + keys[i],
+        });
+      }
+      // js
+      var jsFiles = htmlWebpackPlugin.files.js;
+      for (var i = 0; i < jsFiles.length; i++) {
+        resources.push({
+          /**
+           * Add prefix '/x-chart' just for gh-pages deployment,
+           * For your own project remove it.
+           */
+          url: prefix + jsFiles[i],
+          key: keys[i],
+          dependencies: dependecies[i] || [],
+        });
+      } %>
+      /**
+       * https://github.com/ElemeFE/bowl
+       * Using Bowl for cache
+       */
+      var b = new Bowl();
+      b.add(<%= JSON.stringify(resources) %>);
+      b.inject();
+    </script>
+  </body>
+</html>

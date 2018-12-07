@@ -4,7 +4,7 @@
   "data": {
     "slices": [
       {
-        "slice_id": 1,
+        "sliceId": 1,
         "x": 0,
         "y": 0,
         "w": 12,
@@ -12,11 +12,11 @@
         "width": 360,
         "height": 210,
         "i": "number1",
-        "chart_type": "x-number",
+        "chartType": "x-number",
         "title": "Number1"
       },
       {
-        "slice_id": 2,
+        "sliceId": 2,
         "x": 12,
         "y": 0,
         "w": 12,
@@ -24,11 +24,11 @@
         "width": 360,
         "height": 210,
         "i": "number2",
-        "chart_type": "x-number",
+        "chartType": "x-number",
         "title": "Number2"
       },
       {
-        "slice_id": 3,
+        "sliceId": 3,
         "x": 24,
         "y": 0,
         "w": 12,
@@ -36,12 +36,12 @@
         "width": 360,
         "height": 210,
         "i": "number3",
-        "chart_type": "x-number",
+        "chartType": "x-number",
         "title": "Number3"
       },
 
       {
-        "slice_id": 4,
+        "sliceId": 4,
         "x": 0,
         "y": 6,
         "w": 12,
@@ -49,11 +49,11 @@
         "width": 360,
         "height": 290,
         "i": "chart1",
-        "chart_type": "x-bar",
+        "chartType": "x-bar",
         "title": "Bar"
       },
       {
-        "slice_id": 5,
+        "sliceId": 5,
         "x": 12,
         "y": 6,
         "w": 12,
@@ -61,11 +61,11 @@
         "width": 360,
         "height": 290,
         "i": "chart2",
-        "chart_type": "x-line",
+        "chartType": "x-line",
         "title": "Line"
       },
       {
-        "slice_id": 6,
+        "sliceId": 6,
         "x": 24,
         "y": 6,
         "w": 12,
@@ -73,12 +73,12 @@
         "width": 360,
         "height": 290,
         "i": "chart3",
-        "chart_type": "x-line-area",
+        "chartType": "x-line-area",
         "title": "Line Area"
       },
 
       {
-        "slice_id": 7,
+        "sliceId": 7,
         "x": 0,
         "y": 14,
         "w": 12,
@@ -86,11 +86,11 @@
         "width": 360,
         "height": 290,
         "i": "chart4",
-        "chart_type": "x-pie",
+        "chartType": "x-pie",
         "title": "Pie"
       },
       {
-        "slice_id": 8,
+        "sliceId": 8,
         "x": 12,
         "y": 14,
         "w": 12,
@@ -98,11 +98,11 @@
         "width": 360,
         "height": 290,
         "i": "chart5",
-        "chart_type": "x-circle",
+        "chartType": "x-circle",
         "title": "Circle"
       },
       {
-        "slice_id": 9,
+        "sliceId": 9,
         "x": 24,
         "y": 14,
         "w": 12,
@@ -110,7 +110,7 @@
         "width": 360,
         "height": 290,
         "i": "chart6",
-        "chart_type": "x-hbar",
+        "chartType": "x-hbar",
         "title": "Horizontal Bar"
       }
     ]
