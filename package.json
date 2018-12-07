@@ -1,6 +1,6 @@
 {
   "name": "x-chart",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Draggable & resizable data visualization dashboard",
   "author": "yugasun <yuga_sun@163.com>",
   "private": true,
