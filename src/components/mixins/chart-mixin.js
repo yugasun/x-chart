@@ -126,6 +126,8 @@ export default {
      * emit chart component init event
      */
     emitInit() {
+      this.chart = this.$refs.chart.chart;
+
       this.$emit('init', {
         chart: this.chart,
         chartData: this.apiData,
