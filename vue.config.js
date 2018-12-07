@@ -7,6 +7,7 @@ const prod = process.env.NODE_ENV === 'production';
 const buildForGitPage = process.env.GIT_PAGE;
 
 module.exports = {
+  baseUrl: buildForGitPage ? '/x-chart/' : '/',
   runtimeCompiler: true,
   configureWebpack: {
     optimization: {
@@ -28,6 +29,7 @@ module.exports = {
     config.plugin('html').tap((options) => {
       options[0].title = pkg.name;
       options[0].template = path.join(__dirname, 'src/template/index.html');
+      options[0].favicon = path.join(__dirname, 'public/favicon.ico');
       if (prod) {
         options[0].inject = false;
         options[0].template = path.join(
@@ -39,10 +41,14 @@ module.exports = {
       return options;
     });
 
-    // modify uglify configure
-    // config.plugin('uglifyjs').tap((options) => {
-    //   console.log('uglify', options);
-    //   return options;
-    // });
+    // modify url-loader for fonts
+    config.module.rule('fonts').use('url-loader').loader('url-loader').tap((options) => {
+      options.limit = 10000;
+      // modify publicPath for git-pages
+      options.publicPath = buildForGitPage
+        ? '/x-chart/'
+        : '/';
+      return options;
+    });
   },
 };

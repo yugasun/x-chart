@@ -21,7 +21,6 @@
 
     <script>
       <% var resources = [];
-      var prefix = htmlWebpackPlugin.options.gitPage ? '/x-chart' : '';
       var keys = ["chunk_vendors", "app"];
       var dependecies = [
         0,
@@ -35,7 +34,7 @@
            * Add prefix '/x-chart' just for gh-pages deployment,
            * For your own project remove it.
            */
-          url: prefix + cssFiles[i],
+          url: cssFiles[i],
           key: 'style_' + keys[i],
         });
       }
@@ -47,7 +46,7 @@
            * Add prefix '/x-chart' just for gh-pages deployment,
            * For your own project remove it.
            */
-          url: prefix + jsFiles[i],
+          url: jsFiles[i],
           key: keys[i],
           dependencies: dependecies[i] || [],
         });
