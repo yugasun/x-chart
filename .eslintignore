@@ -1,7 +1,1 @@
-/build/
-/config/
-/dist/
-/*.js
-/test/unit/coverage/
-/src/utils/
-/server/
+src/views/index/dashboard.vue

@@ -1,95 +1,58 @@
 <template>
-   <echarts
-      v-loading="loading"
-      element-loading-text="Loading..."
-      :theme="theme"
-      ref="chart"
-      class="chart"
-      @init="chartInit"
-      :auto-resize="true"
-      :options="options">
-    </echarts>
+    <echarts
+        v-loading="loading"
+        element-loading-text="Loading..."
+        :theme="theme"
+        ref="chart"
+        class="chart"
+        @init="chartInit"
+        :auto-resize="true"
+        :options="options"
+    ></echarts>
 </template>
-<script>
+<script lang="ts">
 import ChartMixin from '@/components/mixins/chart-mixin';
+import { mixins } from 'vue-class-component';
+import { Component } from 'vue-property-decorator';
 
-export default {
-  name: 'XCircle',
-  mixins: [ChartMixin],
+@Component
+export default class XCircle extends mixins(ChartMixin) {
+    hasAxis: boolean = false;
 
-  data() {
-    return {
-      hasAxis: false,
-      chart_type: 'x-circle',
-      options: {
-        title: {
-          show: false,
-          text: this.title,
-          textStyle: {
-            align: 'center',
-            verticalAlign: 'middle',
-          },
-          top: 10,
-          left: '10',
+    chartType: string = 'x-circle';
+
+    options: object = {
+      title: {
+        show: false,
+        text: this.title,
+        textStyle: {
+          align: 'center',
+          verticalAlign: 'middle',
         },
-        legend: {
-          show: true,
-          top: 10,
-          // data: [],
-        },
-        tooltip: {
-          trigger: 'item',
-          confine: true,
-          // backgroundColor: 'rgba(4,29,49,0.6)'
-        },
-        grid: {
-          show: false,
-          top: 40,
-          left: 20,
-          right: 20,
-          bottom: 10,
-          containLabel: true,
-        },
-        series: [],
+        top: 10,
+        left: '10',
       },
+      legend: {
+        show: true,
+        top: 10,
+        // data: [],
+      },
+      tooltip: {
+        trigger: 'item',
+        confine: true,
+        // backgroundColor: 'rgba(4,29,49,0.6)'
+      },
+      grid: {
+        show: false,
+        top: 40,
+        left: 20,
+        right: 20,
+        bottom: 10,
+        containLabel: true,
+      },
+      series: [],
     };
-  },
-
-  methods: {
-    /**
-     * 初始化图形
-     */
-    // initChart() {
-    //   this.convertData();
-    //   this.options.series = [
-    //     {
-    //       name: this.yColumn.name,
-    //       type: 'pie',
-    //       radius: ['50%', '60%'],
-    //       data: this.seriesData,
-    //       center: ['50%', '50%'],
-    //       label: {
-    //         normal: {
-    //           show: false,
-    //           formatter: '{b}: {d}%',
-    //           color: '#9FA9BB',
-    //         },
-    //       },
-    //       labelLine: {
-    //         normal: {
-    //           show: false,
-    //           lineStyle: {
-    //             color: '#9FA9BB',
-    //           },
-    //         },
-    //       },
-    //     },
-    //   ];
-    //   this.options.legend.data = [this.yColumn.name];
-    // },
-  },
-};
+}
 </script>
 <style lang="scss" scoped>
-
 </style>

@@ -32,10 +32,7 @@
     },
     "visualMap": {
       "itemWidth": 15,
-      "color": [
-        "#5ab1ef",
-        "#e0ffff"
-      ]
+      "color": ["#5ab1ef", "#e0ffff"]
     },
     "toolbox": {
       "iconStyle": {
@@ -75,9 +72,7 @@
       },
       "splitLine": {
         "lineStyle": {
-          "color": [
-            "#eee"
-          ]
+          "color": ["#eee"]
         }
       }
     },
@@ -90,17 +85,12 @@
       "splitArea": {
         "show": true,
         "areaStyle": {
-          "color": [
-            "rgba(250,250,250,0.1)",
-            "rgba(200,200,200,0.1)"
-          ]
+          "color": ["rgba(250,250,250,0.1)", "rgba(200,200,200,0.1)"]
         }
       },
       "splitLine": {
         "lineStyle": {
-          "color": [
-            "#eee"
-          ]
+          "color": ["#eee"]
         }
       }
     },
@@ -185,20 +175,7 @@
     "gauge": {
       "axisLine": {
         "lineStyle": {
-          "color": [
-            [
-              0.2,
-              "#2ec7c9"
-            ],
-            [
-              0.8,
-              "#5ab1ef"
-            ],
-            [
-              1,
-              "#d87a80"
-            ]
-          ],
+          "color": [[0.2, "#2ec7c9"], [0.8, "#5ab1ef"], [1, "#d87a80"]],
           "width": 10
         }
       },

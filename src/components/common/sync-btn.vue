@@ -1,28 +1,35 @@
 <template>
-  <el-tooltip :content="disabled ? `Can Sync after ${count}s` : 'Sync Chart Data'" placement="top">
-    <div class="x-legend" :class="{disabled: disabled}" @click="syncData">
-      <i class="icon-sync" :style="{color: white ?  '#fff' : '#888'}"></i>
-    </div>
-  </el-tooltip>
+    <el-tooltip
+        :content="disabled ? `Can Sync after ${count}s` : 'Sync Chart Data'"
+        placement="top"
+    >
+        <div
+            class="x-legend"
+            :class="{disabled: disabled}"
+            @click="syncData"
+        >
+            <i
+                class="icon-sync"
+                :style="{color: white ?  '#fff' : '#888'}"
+            ></i>
+        </div>
+    </el-tooltip>
 </template>
-<script>
-export default {
-  name: 'sync-btn',
-  props: {
-    white: {
-      type: Boolean,
-      default: false,
-    },
-  },
-  data() {
-    return {
-      disabled: false,
-      // sync interval is 3 second
-      count: 3,
-      timer: null,
-    };
-  },
-  methods: {
+<script lang="ts">
+import { Vue, Component, Prop } from 'vue-property-decorator';
+
+@Component
+export default class SyncBtn extends Vue {
+    @Prop({ default: false })
+    white!: boolean;
+
+    disabled: boolean = false;
+
+    // sync interval is 3 second
+    count: any = 3;
+
+    timer: any = null;
+
     syncData() {
       if (this.disabled) {
         return;
@@ -38,25 +45,22 @@ export default {
           this.timer = null;
         }
       }, 1000);
-    },
-  },
-};
+    }
+}
 </script>
 <style lang="scss" scoped>
 .x-legend {
-  color: #888888;
-
-  &:hover {
-    cursor: pointer;
-    opacity: .8;
-  }
-
-  &.disabled {
+    color: #888888;
 
     &:hover {
-      cursor: not-allowed;
+        cursor: pointer;
+        opacity: 0.8;
     }
-  }
+
+    &.disabled {
+        &:hover {
+            cursor: not-allowed;
+        }
+    }
 }
 </style>
-

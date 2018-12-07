@@ -12,7 +12,7 @@
           :label="t.name"></el-option>
       </el-select>
     </div>
-    <dashboard
+    <Dashboard
       :colorStart="themes[themeIndex].colorStart"
       :colorEnd="themes[themeIndex].colorEnd"
       />
@@ -24,22 +24,21 @@
     </footer>
   </div>
 </template>
-<script>
-import Dashboard from '@/views/index/dashboard';
+<script lang="ts">
+import Dashboard from '@/views/index/dashboard.vue';
 import themes from '@/config/themes';
+import { Vue, Component } from 'vue-property-decorator';
 
-export default {
-  name: 'Index',
-  data() {
-    return {
-      themes,
-      themeIndex: 0,
-    };
-  },
+@Component({
   components: {
     Dashboard,
   },
-};
+})
+export default class Index extends Vue {
+  themes: object[] = themes;
+
+  themeIndex: number = 0;
+}
 </script>
 <style lang="scss" scoped>
 .logo {
@@ -71,4 +70,3 @@ footer {
   }
 }
 </style>
-

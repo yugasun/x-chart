@@ -1,16 +1,16 @@
 {
   "data": {
-    "chart_type": "x-circle",
+    "chartType": "x-circle",
     "columns": [
       {
         "type": "x",
         "field": "post_name",
-        "name": "话题名称"
+        "name": "Top Name"
       },
       {
         "type": "y",
         "field": "learn_time",
-        "name": "视频学习时长"
+        "name": "Video learn duration"
       }
     ],
     "rows": [

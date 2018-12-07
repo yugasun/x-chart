@@ -9,9 +9,6 @@
   <a href="https://github.com/apache/incubator-echarts">
     <img src="https://img.shields.io/badge/echarts-4.1.0-brightgreen.svg" alt="echarts">
   </a>
-  <a href="https://github.com/jbaysolutions/vue-grid-layout">
-    <img src="https://img.shields.io/badge/vue--grid--layout-2.1.13-brightgreen.svg" alt="vue-grid-layout">
-  </a>
   <a href="https://travis-ci.org/yugasun/x-chart" rel="nofollow">
     <img src="https://travis-ci.org/yugasun/x-chart.svg?branch=dev" alt="Build Status">
   </a>
@@ -25,6 +22,8 @@
 ## 简介
 
 `x-chart` 是一个可拖拽/放大缩小的数据可视化系统。基于 [Vue.js](https://github.com/vuejs/vue), [vue-echarts](https://github.com/ecomfe/vue-echarts) 和 [vue-grid-layout](https://github.com/yugasun/vue-grid-layout/tree/pro/compass) 开发。
+
+> **Notice** 此版本是用 `typescript` 进行了重构, 如果你需要 `javascript` 编写的老版本, 你可以 `checkout` tag 号为 `v0.1.2` 的版本。
 
 ## 开发
 
@@ -42,6 +41,9 @@ npm run dev
 # 构建
 npm run build
 
+# 发布到 Github 页面
+npm run deploy
+
 # 构建 docker 镜像
 npm run docker:build
 
@@ -57,6 +59,7 @@ npm run docker:run
 - [x] 自定义和美化的echarts图形。
 - [x] 使用 [mockjs](https://github.com/nuysoft/Mock) 进行前端数据模拟。
 - [x] Docker部署方案.
+- [x] _**使用 Typescript 重构**_.
 
 ## Demo
 
@@ -66,6 +69,6 @@ npm run docker:run
 
 ## License
 
-[MIT](https://github.com/yugasun/x-chart/blob/master/LICENSE)
+[MIT](./LICENSE)
 
 Copyright (c) 2018-present yugasun

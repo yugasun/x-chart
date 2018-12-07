@@ -1,11 +1,11 @@
 {
   "data": {
-    "chart_type": "x-line-area",
+    "chartType": "x-line-area",
     "columns": [
       {
         "type": "x",
         "field": "course_name",
-        "name": "Course名称"
+        "name": "Course Name"
       },
       {
         "type": "y",

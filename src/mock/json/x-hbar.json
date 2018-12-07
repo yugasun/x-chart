@@ -1,11 +1,11 @@
 {
   "data": {
-    "chart_type": "x-hbar",
+    "chartType": "x-hbar",
     "columns": [
       {
         "type": "x",
         "field": "course_name",
-        "name": "Course名称"
+        "name": "Course Name"
       },
       {
         "type": "y",
