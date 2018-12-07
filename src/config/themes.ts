@@ -15,7 +15,7 @@ export default [
     colorEnd: '#3CECB0',
   },
   {
-    name: 'Theme3',
+    name: 'Theme4',
     colorStart: '#5134B2',
     colorEnd: '#B175EB',
   },
