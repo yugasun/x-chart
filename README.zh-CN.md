@@ -65,7 +65,7 @@ npm run docker:run
 
 ![x-chart](./demo/1.png)
 
-[Online Preview](http://yugasun.github.io/x-chart).
+[Online Preview](http://yugasun.github.io/x-chart/).
 
 ## License
 
