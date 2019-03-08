@@ -3,3 +3,4 @@
 *.scss linguist-language=Javascript
 *.html linguist-language=Javascript
 *.sh linguist-language=Javascript
+*.vue linguist-language=Typescript
