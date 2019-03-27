@@ -1,11 +1,10 @@
-FROM node:9.11.2
-RUN apt-get update \
-    && apt-get install -y nginx
+FROM node:9.11.2 as builder
 WORKDIR /app
 COPY . /app/
-EXPOSE 80
 RUN npm install \
-    && npm run build \
-    && cp -r dist/* /var/www/html \
-    && rm -rf /app
+    && npm run build
+
+FROM nginx:1.14.2
+COPY --from=builder /app/* /usr/share/nginx/html/
+EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]

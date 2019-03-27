@@ -66,6 +66,16 @@ npm run docker:run
 
 [Online Preview](http://yugasun.github.io/x-chart/).
 
+## Notice
+
+For Chinese if you `npm install` slowly, you can create `.npmrc` file with below content:
+
+```shell
+registry=https://registry.npm.taobao.org/
+phantomjs_cdnurl=http://cnpmjs.org/downloads
+sass_binary_site=https://npm.taobao.org/mirrors/node-sass/
+```
+
 ## License
 
 [MIT](./LICENSE)
