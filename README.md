@@ -46,12 +46,13 @@ npm run deploy
 # build docker image
 npm run docker:build
 
-# run docker image in container
+# run docker image in container, after this you can visit demo by: http://localhost:8080
 npm run docker:run
 ```
 
 ## Feature
 
+- [x] Customized scaffold based on [vue-cli@3.0](https://github.com/vuejs/vue-cli)
 - [x] Configurable dashboard: all modules render depend on the api.
 - [x] Chart modules are draggable and resizable.
 - [x] _**Cache build js and css files in localStorage**_ using [bowl.js](https://github.com/ElemeFE/bowl).
@@ -59,6 +60,7 @@ npm run docker:run
 - [x] Frontend data mock demo using [mockjs](https://github.com/nuysoft/Mock).
 - [x] Docker deploy.
 - [x] _**Refactor with Typescript**_.
+- [ ] Integrated with [prerender-spa-plugin](https://github.com/chrisvfritz/prerender-spa-plugin) for pre-render.
 
 ## Demo
 

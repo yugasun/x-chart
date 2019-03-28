@@ -47,12 +47,13 @@ npm run deploy
 # 构建 docker 镜像
 npm run docker:build
 
-# 运行 docker 镜像
+# 运行 docker 镜像，运行后，dome可以直接访问 http://localhost:8080
 npm run docker:run
 ```
 
 ## 功能
 
+- [x] 基于 [vue-cli@3.0](https://github.com/vuejs/vue-cli) 定制化的项目脚手架
 - [x] 可配置的展示板: 所有模块均基于接口渲染。
 - [x] 可拖拽和放大缩小的图形模块。
 - [x] _**使用 [bowl.js](https://github.com/ElemeFE/bowl) 对前端静态文件（js，css）进行缓存，注入到 localStorage。**_
@@ -60,12 +61,23 @@ npm run docker:run
 - [x] 使用 [mockjs](https://github.com/nuysoft/Mock) 进行前端数据模拟。
 - [x] Docker部署方案.
 - [x] _**使用 Typescript 重构**_.
+- [ ] 集成 [prerender-spa-plugin](https://github.com/chrisvfritz/prerender-spa-plugin) 进行预渲染.
 
 ## Demo
 
 ![x-chart](./demo/1.png)
 
 [Online Preview](http://yugasun.github.io/x-chart/).
+
+## 注意
+
+对于大陆用户如果你运行 `npm install` 太慢，你可以在项目根目录创建 `.npmrc` 文件，文件内容如下：
+
+```shell
+registry=https://registry.npm.taobao.org/
+phantomjs_cdnurl=http://cnpmjs.org/downloads
+sass_binary_site=https://npm.taobao.org/mirrors/node-sass/
+```
 
 ## License
 
