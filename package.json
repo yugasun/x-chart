@@ -1,16 +1,17 @@
 {
   "name": "x-chart",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "private": true,
   "description": "Draggable & resizable data visualization dashboard",
   "author": "yugasun <yuga_sun@163.com>",
   "scripts": {
     "dev": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "build:cache": "cross-env CACHE=true vue-cli-service build",
+    "build:git-page": "cross-env GIT_PAGE=true vue-cli-service build",
     "test": "npm run lint",
     "lint": "vue-cli-service lint",
     "deploy": "npm run build:git-page && gh-pages -d dist --remote origin",
-    "build:git-page": "cross-env GIT_PAGE=true vue-cli-service build",
     "docker:build": "docker build -t x-chart .",
     "docker:exec": "docker exec -it x-chart bash",
     "docker:run": "docker run -itd -p 8080:80 --name=x-chart x-chart"
@@ -48,6 +49,7 @@
     "eslint-plugin-vue": "^5.0.0",
     "gh-pages": "^2.0.1",
     "node-sass": "^4.9.0",
+    "prerender-spa-plugin": "^3.4.0",
     "sass-loader": "^7.0.1",
     "typescript": "^3.2.1",
     "uglifyjs-webpack-plugin": "^2.0.1",

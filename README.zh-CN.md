@@ -41,6 +41,9 @@ npm run dev
 # 构建
 npm run build
 
+# 构建带有 localStorage 缓存版本
+npm run build:cache
+
 # 发布到 Github 页面
 npm run deploy
 
@@ -49,6 +52,9 @@ npm run docker:build
 
 # 运行 docker 镜像，运行后，dome可以直接访问 http://localhost:8080
 npm run docker:run
+
+# 进入当前运行的 docker 镜像
+npm run docker:exec
 ```
 
 ## 功能
@@ -61,7 +67,7 @@ npm run docker:run
 - [x] 使用 [mockjs](https://github.com/nuysoft/Mock) 进行前端数据模拟。
 - [x] Docker部署方案.
 - [x] _**使用 Typescript 重构**_.
-- [ ] 集成 [prerender-spa-plugin](https://github.com/chrisvfritz/prerender-spa-plugin) 进行预渲染.
+- [x] 集成 [prerender-spa-plugin](https://github.com/chrisvfritz/prerender-spa-plugin) 进行预渲染.
 
 ## Demo
 

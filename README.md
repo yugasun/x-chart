@@ -40,6 +40,9 @@ npm run dev
 # build
 npm run build
 
+# build with localStorage cache
+npm run build:cache
+
 # deploy for Github page
 npm run deploy
 
@@ -48,6 +51,9 @@ npm run docker:build
 
 # run docker image in container, after this you can visit demo by: http://localhost:8080
 npm run docker:run
+
+# run into current docker container
+npm run docker:exec
 ```
 
 ## Feature
@@ -60,7 +66,7 @@ npm run docker:run
 - [x] Frontend data mock demo using [mockjs](https://github.com/nuysoft/Mock).
 - [x] Docker deploy.
 - [x] _**Refactor with Typescript**_.
-- [ ] Integrated with [prerender-spa-plugin](https://github.com/chrisvfritz/prerender-spa-plugin) for pre-render.
+- [x] Integrated with [prerender-spa-plugin](https://github.com/chrisvfritz/prerender-spa-plugin) for pre-render.
 
 ## Demo
 

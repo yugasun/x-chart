@@ -2,7 +2,7 @@ import Mock from 'mockjs';
 import dashboardAPI from './dashboard';
 
 Mock.setup({
-  timeout: '350-600',
+  timeout: '10-100',
 });
 
 // dashboard相关
