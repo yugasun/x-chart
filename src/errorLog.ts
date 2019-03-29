@@ -11,6 +11,5 @@ Vue.config.errorHandler = (err: any, vm: Vue, info: string) => {
       info,
       url: window.location.href,
     });
-    console.error(err, info);
   });
 };

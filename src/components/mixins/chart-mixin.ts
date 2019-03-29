@@ -107,6 +107,7 @@ export default class ChartMixin extends Vue {
   }
 
   handleChartClick(param: any) {
+    // eslint-disable-next-line no-console
     console.log(this, param);
   }
 

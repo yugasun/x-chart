@@ -7,7 +7,8 @@ const prod = process.env.NODE_ENV === 'production';
 const buildForGitPage = process.env.GIT_PAGE;
 
 module.exports = {
-  baseUrl: buildForGitPage ? '/x-chart/' : '/',
+  parallel: true,
+  publicPath: buildForGitPage ? '/x-chart/' : '/',
   runtimeCompiler: true,
   configureWebpack: {
     optimization: {
