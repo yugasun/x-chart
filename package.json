@@ -48,7 +48,7 @@
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0",
     "gh-pages": "^2.0.1",
-    "node-sass": "^4.9.0",
+    "node-sass": "^4.13.1",
     "prerender-spa-plugin": "^3.4.0",
     "sass-loader": "^7.0.1",
     "typescript": "^3.2.1",
