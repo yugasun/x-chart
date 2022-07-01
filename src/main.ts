@@ -15,7 +15,6 @@ import router from '@/router';
 import store from '@/store';
 import GlobalComponents from '@/plugins/global-components';
 import { ErrorHandler } from '@/plugins/error-handler';
-import { updateTheme } from '@/utils/theme';
 
 import '@/styles/app.scss';
 
@@ -48,8 +47,6 @@ async function main() {
     app.use(ErrorHandler);
 
     app.mount('#app');
-
-    updateTheme();
 }
 
 main();
