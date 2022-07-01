@@ -3,18 +3,21 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/vuejs/vue">
-    <img src="https://img.shields.io/badge/vue-2.5.17-brightgreen.svg" alt="vue">
-  </a>
-  <a href="https://github.com/apache/incubator-echarts">
-    <img src="https://img.shields.io/badge/echarts-4.1.0-brightgreen.svg" alt="echarts">
-  </a>
-  <a href="https://travis-ci.org/yugasun/x-chart" rel="nofollow">
-    <img src="https://travis-ci.org/yugasun/x-chart.svg?branch=dev" alt="Build Status">
-  </a>
-  <a href="https://github.com/yugasun/x-chart/blob/master/LICENSE">
-    <img src="https://img.shields.io/github/license/mashape/apistatus.svg" alt="license">
-  </a>
+    <a href="https://vuejs.org/">
+        <img src="https://img.shields.io/badge/Vue-3.2.25-42b883" alt="Vue3" />
+    </a>
+    <a href="https://echarts.apache.org/">
+        <img src="https://img.shields.io/badge/ECharts-5.3.3-brightgreen" alt="ECharts" />
+    </a>
+    <a href="https://vitejs.dev">
+        <img src="https://img.shields.io/badge/Vite-2.9.7-747bff" alt="Vite" />
+    </a>
+    <a href="https://pinia.vuejs.org">
+        <img src="https://img.shields.io/badge/Pinia-2.0.14-f7d336" alt="Pinia" />
+    </a>
+    <a href="https://www.typescriptlang.org/">
+        <img src="https://img.shields.io/badge/TypeScript-4.6.4-blue" alt="TypeScript" />
+    </a>
 </p>
 
 [简体中文](./README.zh-CN.md) | English
@@ -27,46 +30,40 @@
 
 ## Develop
 
-``` bash
+```bash
 # clone the project
 git clone https://github.com/yugasun/x-chart.git
 
 # install dependency
-npm install
+pnpm install
 
 # develop
-npm run dev
+pnpm run dev
 
 # build
-npm run build
-
-# build with localStorage cache
-npm run build:cache
+pnpm run build
 
 # deploy for Github page
-npm run deploy
+pnpm run deploy
 
 # build docker image
-npm run docker:build
+pnpm run docker:build
 
 # run docker image in container, after this you can visit demo by: http://localhost:8080
-npm run docker:run
+pnpm run docker:run
 
 # run into current docker container
-npm run docker:exec
+pnpm run docker:exec
 ```
 
 ## Feature
 
-- [x] Customized scaffold based on [vue-cli@3.0](https://github.com/vuejs/vue-cli)
-- [x] Configurable dashboard: all modules render depend on the api.
-- [x] Chart modules are draggable and resizable.
-- [x] _**Cache build js and css files in localStorage**_ using [bowl.js](https://github.com/ElemeFE/bowl).
-- [x] Customized and beautify charts using echarts.
-- [x] Frontend data mock demo using [mockjs](https://github.com/nuysoft/Mock).
-- [x] Docker deploy.
-- [x] _**Refactor with Typescript**_.
-- [x] Integrated with [prerender-spa-plugin](https://github.com/chrisvfritz/prerender-spa-plugin) for pre-render.
+-   [x] Base on template [vue-ts-starter](https://github.com/yugasun/vue-ts-starter) (Vue3 + Vite + TypeScript)
+-   [x] Configurable dashboard: all modules render depend on the api.
+-   [x] Chart modules are draggable and resizable.
+-   [x] Customized and beautify charts using echarts.
+-   [x] Frontend data mock demo using [msw](https://mswjs.io/docs/) Seamless REST/GraphQL API mocking library for browser and Node.js.
+-   [x] Docker deploy.
 
 ## Demo
 

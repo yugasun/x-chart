@@ -1,56 +1,54 @@
 <template>
-    <echarts
-        v-loading="loading"
-        element-loading-text="Loading..."
-        :theme="theme"
-        ref="chart"
-        class="chart"
-        @init="chartInit"
-        :auto-resize="true"
+    <XChart
         :options="options"
-    ></echarts>
+        :chart-type="chartType"
+        :has-axis="false"
+        :title="title"
+    />
 </template>
-<script lang="ts">
-import ChartMixin from '@/components/mixins/chart-mixin';
-import { mixins } from 'vue-class-component';
-import { Component } from 'vue-property-decorator';
+<script lang="ts" setup>
+import { ref } from 'vue';
+const props = withDefaults(
+    defineProps<{
+        title: string;
+    }>(),
+    {
+        title: 'Cricle',
+    },
+);
 
-export default class XPie extends mixins(ChartMixin) {
-    hasAxis: boolean = false;
+const chartType = ref('x-pie');
+const hasAxis = ref(false);
 
-    chartType: string = 'x-pie';
-
-    options: object = {
-      title: {
+const options = ref({
+    title: {
         show: false,
-        text: this.title,
+        text: props.title,
         textStyle: {
-          align: 'center',
-          verticalAlign: 'middle',
+            align: 'center',
+            verticalAlign: 'middle',
         },
         top: 10,
         left: '10',
-      },
-      legend: {
+    },
+    legend: {
         show: true,
         top: 10,
         // data: [],
-      },
-      tooltip: {
+    },
+    tooltip: {
         trigger: 'item',
         confine: true,
         // backgroundColor: 'rgba(4,29,49,0.6)'
-      },
-      grid: {
+    },
+    grid: {
         show: false,
         left: 20,
         right: 20,
         bottom: 40,
         containLabel: true,
-      },
-      series: [],
-    };
-}
+    },
+    series: [],
+});
 </script>
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>

@@ -1,40 +1,37 @@
 <template>
-    <div
-        class="x-expand"
-        @click="expandClick"
-    >
+    <div class="x-expand" @click="expandClick">
         <el-tooltip
             :content="expanded ? 'Exit focus mode' : 'Into focus mode'"
             placement="top"
         >
             <i
                 class="icon"
-                :class="{'icon-fullscreen': !expanded, 'icon-fullscreen-exit': expanded}"
-                :style="{color: white ?  '#fff' : '#888'}"
+                :class="{
+                    'icon-fullscreen': !expanded,
+                    'icon-fullscreen-exit': expanded,
+                }"
+                :style="{ color: white ? '#fff' : '#888' }"
             ></i>
         </el-tooltip>
     </div>
 </template>
-<script lang="ts">
-import { Vue, Component, Prop } from 'vue-property-decorator';
+<script lang="ts" setup>
+import { ref } from 'vue';
+withDefaults(
+    defineProps<{
+        white: boolean;
+    }>(),
+    {
+        white: false,
+    },
+);
+const emit = defineEmits(['expand']);
 
-@Component
-export default class ExpandBtn extends Vue {
-    @Prop({ default: false })
-    white!: boolean;
+const expanded = ref(false);
 
-    @Prop({ default: '' })
-    expandTarget!: Element;
-
-    expanded: boolean = false;
-
-    expandClick() {
-      this.expanded = !this.expanded;
-      this.$parent.$emit('expand', {
-        expand: this.expanded,
-        targetRef: this.expandTarget,
-      });
-    }
+function expandClick() {
+    expanded.value = !expanded.value;
+    emit('expand', expanded.value);
 }
 </script>
 <style lang="scss" scoped>

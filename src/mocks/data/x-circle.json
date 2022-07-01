@@ -1,0 +1,41 @@
+{
+  "chartType": "x-circle",
+  "columns": [
+    {
+      "type": "x",
+      "field": "post_name",
+      "name": "Top Name"
+    },
+    {
+      "type": "y",
+      "field": "learn_time",
+      "name": "Video learn duration"
+    }
+  ],
+  "rows": [
+    {
+      "learn_time": 9408.81,
+      "post_name": "Course1"
+    },
+    {
+      "learn_time": 8024.02,
+      "post_name": "Course2"
+    },
+    {
+      "learn_time": 7729.59,
+      "post_name": "Course3"
+    },
+    {
+      "learn_time": 6430.59,
+      "post_name": "Course4"
+    },
+    {
+      "learn_time": 6140.94,
+      "post_name": "Course5"
+    },
+    {
+      "learn_time": 6065.3,
+      "post_name": "Course6"
+    }
+  ]
+}

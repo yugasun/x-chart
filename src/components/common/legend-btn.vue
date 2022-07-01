@@ -1,27 +1,26 @@
 <template>
-    <el-tooltip
-        :content="`${legend ? 'Hide' : 'Show'} legend`"
-        placement="top"
-    >
-        <div
-            class="x-legend"
-            @click="switchLegend"
+    <div class="x-legend" @click="switchLegend">
+        <el-tooltip
+            :content="`${legend ? 'Hide' : 'Show'} legend`"
+            placement="top"
         >
             <i :class="legend ? 'icon-smile' : 'icon-frown'"></i>
-        </div>
-    </el-tooltip>
+        </el-tooltip>
+    </div>
 </template>
-<script lang="ts">
-import { Vue, Component, Prop } from 'vue-property-decorator';
+<script lang="ts" setup>
+const props = withDefaults(
+    defineProps<{
+        legend: boolean;
+    }>(),
+    {
+        legend: true,
+    },
+);
+const emit = defineEmits(['update:legend']);
 
-@Component
-export default class LegentBtn extends Vue {
-    @Prop({ default: true })
-    legend!: boolean;
-
-    switchLegend() {
-      this.$emit('update:legend', !this.legend);
-    }
+function switchLegend() {
+    emit('update:legend', !props.legend);
 }
 </script>
 <style lang="scss" scoped>

@@ -1,90 +1,83 @@
 <template>
-    <echarts
-        v-loading="loading"
-        element-loading-text="Loading..."
-        :theme="theme"
-        ref="chart"
-        class="chart"
-        @click="handleChartClick"
-        @init="chartInit"
-        :auto-resize="true"
-        :options="options"
-    ></echarts>
+    <XChart :options="options" :chart-type="chartType" :title="title" />
 </template>
-<script lang="ts">
-import ChartMixin from '@/components/mixins/chart-mixin';
-import { cutStr } from '@/utils/tool';
-import { mixins } from 'vue-class-component';
-import { Component } from 'vue-property-decorator';
+<script lang="ts" setup>
+import { ref } from 'vue';
+import { cutStr } from '@/utils/index';
 
-export default class XHbar extends mixins(ChartMixin) {
-    chartType: string = 'x-hbar';
+const props = withDefaults(
+    defineProps<{
+        title: string;
+    }>(),
+    {
+        title: 'HBar',
+    },
+);
 
-    direction: string = 'horizontal';
+const chartType = ref('x-hbar');
+const direction = ref('horizontal');
 
-    options: object = {
-      title: {
+const options = ref({
+    title: {
         show: false,
-        text: this.title,
+        text: props.title,
         textStyle: {
-          align: 'center',
-          verticalAlign: 'middle',
+            align: 'center',
+            verticalAlign: 'middle',
         },
         top: 10,
         left: '10',
-      },
-      legend: {
+    },
+    legend: {
         show: true,
         top: 10,
         // data: [],
-      },
-      tooltip: {
+    },
+    tooltip: {
         trigger: 'item',
         axisPointer: {
-          type: 'line',
+            type: 'line',
         },
-      },
-      grid: {
+    },
+    grid: {
         show: true,
         top: 40,
         left: 20,
         right: 20,
         bottom: 10,
         containLabel: true,
-      },
-      xAxis: [
+    },
+    xAxis: [
         {
-          type: 'value',
-          position: 'top',
-          axisLine: {
-            lineStyle: {
-              color: '#9FA9BB',
+            type: 'value',
+            position: 'top',
+            axisLine: {
+                lineStyle: {
+                    color: '#9FA9BB',
+                },
             },
-          },
         },
-      ],
-      yAxis: [
+    ],
+    yAxis: [
         {
-          type: 'category',
-          axisLine: {
-            lineStyle: {
-              color: '#9FA9BB',
+            type: 'category',
+            axisLine: {
+                lineStyle: {
+                    color: '#9FA9BB',
+                },
             },
-          },
-          inverse: true,
-          data: [],
-          axisLabel: {
-            rotate: 0,
-            showMaxLabel: true,
-            formatter(params: string) {
-              return cutStr(params, 5);
+            inverse: true,
+            data: [],
+            axisLabel: {
+                rotate: 0,
+                showMaxLabel: true,
+                formatter(params: string) {
+                    return cutStr(params, 5);
+                },
             },
-          },
         },
-      ],
-      series: [],
-    };
-}
+    ],
+    series: [],
+});
 </script>
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>

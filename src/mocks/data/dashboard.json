@@ -1,0 +1,123 @@
+{
+  "slices": [
+    {
+      "static": false,
+      "sliceId": 1,
+      "x": 0,
+      "y": 0,
+      "w": 12,
+      "h": 6,
+      "width": 360,
+      "height": 210,
+      "i": "number1",
+      "chartType": "x-number",
+      "title": "Number1"
+    },
+    {
+      "static": false,
+      "sliceId": 2,
+      "x": 12,
+      "y": 0,
+      "w": 12,
+      "h": 6,
+      "width": 360,
+      "height": 210,
+      "i": "number2",
+      "chartType": "x-number",
+      "title": "Number2"
+    },
+    {
+      "static": false,
+      "sliceId": 3,
+      "x": 24,
+      "y": 0,
+      "w": 12,
+      "h": 6,
+      "width": 360,
+      "height": 210,
+      "i": "number3",
+      "chartType": "x-number",
+      "title": "Number3"
+    },
+
+    {
+      "static": false,
+      "sliceId": 4,
+      "x": 0,
+      "y": 6,
+      "w": 12,
+      "h": 8,
+      "width": 360,
+      "height": 290,
+      "i": "chart1",
+      "chartType": "x-bar",
+      "title": "Bar"
+    },
+    {
+      "static": false,
+      "sliceId": 5,
+      "x": 12,
+      "y": 6,
+      "w": 12,
+      "h": 8,
+      "width": 360,
+      "height": 290,
+      "i": "chart2",
+      "chartType": "x-line",
+      "title": "Line"
+    },
+    {
+      "static": false,
+      "sliceId": 6,
+      "x": 24,
+      "y": 6,
+      "w": 12,
+      "h": 8,
+      "width": 360,
+      "height": 290,
+      "i": "chart3",
+      "chartType": "x-line-area",
+      "title": "Line Area"
+    },
+
+    {
+      "static": false,
+      "sliceId": 7,
+      "x": 0,
+      "y": 14,
+      "w": 12,
+      "h": 8,
+      "width": 360,
+      "height": 290,
+      "i": "chart4",
+      "chartType": "x-pie",
+      "title": "Pie"
+    },
+    {
+      "static": false,
+      "sliceId": 8,
+      "x": 12,
+      "y": 14,
+      "w": 12,
+      "h": 8,
+      "width": 360,
+      "height": 290,
+      "i": "chart5",
+      "chartType": "x-circle",
+      "title": "Circle"
+    },
+    {
+      "static": false,
+      "sliceId": 9,
+      "x": 24,
+      "y": 14,
+      "w": 12,
+      "h": 8,
+      "width": 360,
+      "height": 290,
+      "i": "chart6",
+      "chartType": "x-hbar",
+      "title": "Horizontal Bar"
+    }
+  ]
+}

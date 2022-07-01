@@ -1,51 +1,49 @@
 <template>
-    <el-tooltip
-        :content="disabled ? `Can Sync after ${count}s` : 'Sync Chart Data'"
-        placement="top"
-    >
-        <div
-            class="x-legend"
-            :class="{disabled: disabled}"
-            @click="syncData"
+    <div class="x-legend" :class="{ disabled: disabled }" @click="syncData">
+        <el-tooltip
+            :content="disabled ? `Can Sync after ${count}s` : 'Sync Chart Data'"
+            placement="top"
         >
             <i
                 class="icon-sync"
-                :style="{color: white ?  '#fff' : '#888'}"
+                :style="{ color: white ? '#fff' : '#888' }"
             ></i>
-        </div>
-    </el-tooltip>
+        </el-tooltip>
+    </div>
 </template>
-<script lang="ts">
-import { Vue, Component, Prop } from 'vue-property-decorator';
+<script lang="ts" setup>
+import { ref } from 'vue';
+withDefaults(
+    defineProps<{
+        white: boolean;
+    }>(),
+    {
+        white: false,
+    },
+);
+const emit = defineEmits(['sync']);
 
-@Component
-export default class SyncBtn extends Vue {
-    @Prop({ default: false })
-    white!: boolean;
+const disabled = ref(false);
 
-    disabled: boolean = false;
+// sync interval is 3 second
+const count = ref(3);
+const timer = ref<number | NodeJS.Timer | null>(null);
 
-    // sync interval is 3 second
-    count: any = 3;
-
-    timer: any = null;
-
-    syncData() {
-      if (this.disabled) {
+function syncData() {
+    if (disabled.value) {
         return;
-      }
-      this.$emit('sync');
-      this.disabled = true;
-      this.timer = setInterval(() => {
-        this.count -= 1;
-        if (this.count === 0) {
-          this.count = 3;
-          this.disabled = false;
-          clearInterval(this.timer);
-          this.timer = null;
-        }
-      }, 1000);
     }
+    emit('sync');
+    disabled.value = true;
+    timer.value = setInterval(() => {
+        count.value -= 1;
+        if (count.value === 0) {
+            count.value = 3;
+            disabled.value = false;
+            clearInterval(timer.value as number);
+            timer.value = null;
+        }
+    }, 1000);
 }
 </script>
 <style lang="scss" scoped>

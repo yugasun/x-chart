@@ -1,56 +1,59 @@
 // @import './_ionicons';
 @import './_iconfont';
 
-// http://element-cn.eleme.io/#/en-US/component/custom-theme
-/* theme color */
-$--color-primary: #198BF6;
-/* icon font path, required */
-$--font-path: '~element-ui/lib/theme-chalk/fonts';
+html,
+body {
+    font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #FAFBFC;
+    // font-weight: 300;
 
-@import '~element-ui/packages/theme-chalk/src/index.scss';
-
-html,body {
-  font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: #FAFBFC;
-  // font-weight: 300;
-
-  text-align: center;
-  color: #2c3e50;
+    text-align: center;
+    color: #2c3e50;
 }
 
-ul,li {
-  list-style: none;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+ul,
+li {
+    list-style: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
 p {
-  margin: 0;
+    margin: 0;
 }
 
-a,a:hover,a:visited {
-  color: #198BF6;
-  text-decoration: none;
+a,
+a:hover,
+a:visited {
+    color: #198BF6;
+    text-decoration: none;
 }
 
 .chart-item {
-  // overflow: hidden;
-  .chart {
-    width: 100%;
-    height: 90%;
-    margin: 0 auto;
-  }
 
+    // overflow: hidden;
+    .chart {
+        width: 100%;
+        height: 90%;
+        margin: 0 auto;
+    }
+
+    .vue-resizable-handle {
+        display: none;
+    }
+
+    &:hover {
+        .vue-resizable-handle {
+            display: block;
+        }
+    }
 }
 
-.vue-resizable-handle {
-  display: none;
-}
 
 .wrapper {
-  // width: 1200px;
-  margin: 0 auto;
+    // width: 1200px;
+    margin: 0 auto;
 }

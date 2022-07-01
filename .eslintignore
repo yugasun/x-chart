@@ -1,2 +1,5 @@
+node_modules/
+dist/
+index.html
 
-src/views/index/dashboard.vue
+public/mockServiceWorker.js
