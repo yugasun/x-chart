@@ -1,0 +1,16 @@
+{
+  "chartType": "x-number",
+  "columns": [
+    {
+      "type": "y",
+      "field": "enroll_number",
+      "name": "Enroll Number",
+      "unit": "Persion"
+    }
+  ],
+  "rows": [
+    {
+      "enroll_number": 32778
+    }
+  ]
+}

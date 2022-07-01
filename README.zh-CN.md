@@ -1,20 +1,25 @@
+# x-chart
+
 <p align="center">
   <img width="80" src="./logo.png">
 </p>
 
 <p align="center">
-  <a href="https://github.com/vuejs/vue">
-    <img src="https://img.shields.io/badge/vue-2.5.16-brightgreen.svg" alt="vue">
-  </a>
-  <a href="https://github.com/apache/incubator-echarts">
-    <img src="https://img.shields.io/badge/echarts-4.1.0-brightgreen.svg" alt="echarts">
-  </a>
-  <a href="https://travis-ci.org/yugasun/x-chart" rel="nofollow">
-    <img src="https://travis-ci.org/yugasun/x-chart.svg?branch=dev" alt="Build Status">
-  </a>
-  <a href="https://github.com/yugasun/x-chart/blob/master/LICENSE">
-    <img src="https://img.shields.io/github/license/mashape/apistatus.svg" alt="license">
-  </a>
+    <a href="https://vuejs.org/">
+        <img src="https://img.shields.io/badge/Vue-3.2.25-42b883" alt="Vue3" />
+    </a>
+    <a href="https://echarts.apache.org/">
+        <img src="https://img.shields.io/badge/ECharts-5.3.3-brightgreen" alt="ECharts" />
+    </a>
+    <a href="https://vitejs.dev">
+        <img src="https://img.shields.io/badge/Vite-2.9.7-747bff" alt="Vite" />
+    </a>
+    <a href="https://pinia.vuejs.org">
+        <img src="https://img.shields.io/badge/Pinia-2.0.14-f7d336" alt="Pinia" />
+    </a>
+    <a href="https://www.typescriptlang.org/">
+        <img src="https://img.shields.io/badge/TypeScript-4.6.4-blue" alt="TypeScript" />
+    </a>
 </p>
 
 简体中文 | [English](./README.md)
@@ -27,47 +32,41 @@
 
 ## 开发
 
-``` bash
+```bash
 # 克隆项目
 git clone https://github.com/yugasun/x-chart.git
 
 # 安装依赖
-npm install
+pnpm install
 
 # 启动服务
 # 浏览器访问 http://localhost:8080
-npm run dev
+pnpm run dev
 
 # 构建
-npm run build
-
-# 构建带有 localStorage 缓存版本
-npm run build:cache
+pnpm run build
 
 # 发布到 Github 页面
-npm run deploy
+pnpm run deploy
 
 # 构建 docker 镜像
-npm run docker:build
+pnpm run docker:build
 
 # 运行 docker 镜像，运行后，dome可以直接访问 http://localhost:8080
-npm run docker:run
+pnpm run docker:run
 
 # 进入当前运行的 docker 镜像
-npm run docker:exec
+pnpm run docker:exec
 ```
 
 ## 功能
 
-- [x] 基于 [vue-cli@3.0](https://github.com/vuejs/vue-cli) 定制化的项目脚手架
-- [x] 可配置的展示板: 所有模块均基于接口渲染。
-- [x] 可拖拽和放大缩小的图形模块。
-- [x] _**使用 [bowl.js](https://github.com/ElemeFE/bowl) 对前端静态文件（js，css）进行缓存，注入到 localStorage。**_
-- [x] 自定义和美化的echarts图形。
-- [x] 使用 [mockjs](https://github.com/nuysoft/Mock) 进行前端数据模拟。
-- [x] Docker部署方案.
-- [x] _**使用 Typescript 重构**_.
-- [x] 集成 [prerender-spa-plugin](https://github.com/chrisvfritz/prerender-spa-plugin) 进行预渲染.
+-   [x] 基于 Vue3 + Vite + TypeScript 模板研发 [vue-ts-starter](https://github.com/yugasun/vue-ts-starter)
+-   [x] 可配置的展示板: 所有模块均基于接口渲染。
+-   [x] 可拖拽和放大缩小的图形模块。
+-   [x] 自定义和美化的 echarts 图形。
+-   [x] 使用 [msw](https://mswjs.io/docs/) 进行前端数据模拟.
+-   [x] Docker 部署方案.
 
 ## Demo
 

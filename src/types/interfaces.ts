@@ -1,55 +1,43 @@
 export interface ApiData {
-  columns: any[];
-  rows: any[];
+    chartType: string;
+    columns: {
+        type: string;
+        field: string;
+        name: string;
+    }[];
+    rows: Record<string, any>[];
 }
 
 export interface ExpandPayload {
-  expand: boolean;
-  targetRef: any;
+    expand: boolean;
+    targetId: number | string;
 }
 
 export interface RequestParam {
-  chartType: string;
+    chartType?: string;
 }
 
 export interface ChartInitPayload {
-  chart: any;
-  chartData: ApiData;
+    chart: any;
+    chartData: ApiData;
 }
-
-export interface State {
-  app: AppState;
-  logs: ErrorLogState;
-}
-
-export interface AppState {
-  theme: number;
-  pageId: number;
-}
-
-export interface ErrorLogState {
-  logs: any[];
-}
-
-export interface ThemePayload {
-  theme: number;
-}
-
 export interface SliceItem {
-  sliceId: number;
-  x: number;
-  y: number;
-  w: number;
-  h: number;
-  width: number;
-  height: number;
-  i: string;
-  chartType: string;
-  title: string;
+    sliceId: string;
+    x: number;
+    y: number;
+    w: number;
+    h: number;
+    width: number;
+    height: number;
+    i: string;
+    chartType: string;
+    title: string;
+    static: boolean;
+    popup?: boolean;
 }
 
 // chart interface
 export interface ChartInstance {
-  setOption(o: any): void
-  resize(): void
+    setOption(o: any): void;
+    resize(): void;
 }

@@ -1,0 +1,57 @@
+{
+  "chartType": "x-hbar",
+  "columns": [
+    {
+      "type": "x",
+      "field": "course_name",
+      "name": "Course Name"
+    },
+    {
+      "type": "y",
+      "field": "difficulty",
+      "name": "Enrols"
+    }
+  ],
+  "rows": [
+    {
+      "difficulty": 9408.81,
+      "course_name": "Course1"
+    },
+    {
+      "difficulty": 8024.02,
+      "course_name": "Course2"
+    },
+    {
+      "difficulty": 7729.59,
+      "course_name": "Course3"
+    },
+    {
+      "difficulty": 6430.59,
+      "course_name": "Course4"
+    },
+    {
+      "difficulty": 6140.94,
+      "course_name": "Course5"
+    },
+    {
+      "difficulty": 6065.3,
+      "course_name": "Course6"
+    },
+    {
+      "difficulty": 6025.71,
+      "course_name": "Course7"
+    },
+    {
+      "difficulty": 4780.8,
+      "course_name": "Course8"
+    },
+    {
+      "difficulty": 4724.57,
+      "course_name": "Course9"
+    },
+    {
+      "difficulty": 4634.27,
+      "course_name": "Course10"
+    }
+  ]
+}

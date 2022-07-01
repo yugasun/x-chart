@@ -1,42 +1,25 @@
 <template>
-    <div
-        class="x-number"
-        :style="style"
-    >
-        <h3 class="title">{{ title }}</h3>
-        <span class="number">{{ loading ? 'Loading...' : number }}</span>
-        <span class="unit">{{ unit }}</span>
-    </div>
+    <XChart
+        :options="options"
+        :chart-type="chartType"
+        :is-number="true"
+        :title="title"
+    />
 </template>
-<script lang="ts">
-import ChartMixin from '@/components/mixins/chart-mixin';
-import { mixins } from 'vue-class-component';
-import { Component, Prop } from 'vue-property-decorator';
+<script lang="ts" setup>
+import { ref } from 'vue';
 
-@Component
-export default class XNumber extends mixins(ChartMixin) {
-    @Prop({ required: true })
-    height!: any;
+withDefaults(
+    defineProps<{
+        title: string;
+    }>(),
+    {
+        title: 'Cricle',
+    },
+);
+const chartType = ref('x-number');
 
-    chartType: string = 'x-number';
-
-    number: any = '';
-
-    unit: any = '';
-
-    get style() {
-      return {
-        fontSize: `${((this.height - 60) / 160) * 16}px`,
-        height: `${this.height - 60}px`,
-      };
-    }
-
-    initChart() {
-      this.convertData();
-      this.number = this.apiData.rows[0][this.yColumns[0].field];
-      this.unit = this.yColumns[0].unit;
-    }
-}
+const options = ref({});
 </script>
 <style lang="scss" scoped>
 .x-number {

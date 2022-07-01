@@ -1,23 +1,22 @@
 module.exports = {
-  root: true,
+    parser: 'vue-eslint-parser',
+    parserOptions: {
+        parser: '@typescript-eslint/parser',
+        ecmaVersion: 2020,
+        sourceType: 'module',
+        ecmaFeatures: {
+            jsx: true,
+        },
+    },
+    extends: [
+        'plugin:vue/vue3-recommended',
+        'plugin:@typescript-eslint/recommended',
+        'prettier',
+        'plugin:prettier/recommended',
+    ],
 
-  env: {
-    node: true,
-  },
-
-  extends: [
-    'plugin:vue/essential',
-    '@vue/airbnb',
-    '@vue/typescript',
-  ],
-
-  rules: {
-    'no-param-reassign': 0,
-    'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-  },
-
-  parserOptions: {
-    parser: '@typescript-eslint/parser'
-  }
+    rules: {
+        // override/add rules settings here, such as:
+        'vue/multi-word-component-names': 'off',
+    },
 };

@@ -1,0 +1,171 @@
+{
+  "version": 1,
+  "themeName": "default",
+  "theme": {
+    "seriesCnt": "4",
+    "backgroundColor": "rgba(252,252,252,0)",
+    "titleColor": "#4d4d4d",
+    "subtitleColor": "#9fa9bb",
+    "textColorShow": false,
+    "textColor": "#9fa9bb",
+    "markTextColor": "#ffffff",
+    "color": [
+      "#7956EC",
+      "#009FC5",
+      "#F23673",
+      "#5134B2",
+      "#2FB9F8",
+      "#FFC066",
+      "#3CECB0",
+      "#B175EB"
+    ],
+    "borderColor": "#ccc",
+    "borderWidth": 0,
+    "visualMapColor": ["#516b91", "#59c4e6", "#a5e7f0"],
+    "toolbox": {
+      "iconStyle": {
+        "normal": {
+          "borderColor": "#2ec7c9"
+        }
+      }
+    },
+    "tooltip": {
+      "backgroundColor": "rgba(50,50,50,0.5)",
+      "axisPointer": {
+        "type": "line",
+        "lineStyle": {
+          "color": "#008acd"
+        },
+        "crossStyle": {
+          "color": "#008acd"
+        },
+        "shadowStyle": {
+          "color": "rgba(200,200,200,0.2)"
+        }
+      }
+    },
+    "dataZoom": {
+      "dataBackgroundColor": "#efefff",
+      "fillerColor": "rgba(182,162,222,0.2)",
+      "handleColor": "#008acd"
+    },
+    "grid": {
+      "borderColor": "#eee"
+    },
+    "legendTextColor": "#9fa9bb",
+    "kColor": "#edafda",
+    "kColor0": "transparent",
+    "kBorderColor": "#d680bc",
+    "kBorderColor0": "#8fd3e8",
+    "kBorderWidth": "2",
+    "lineWidth": "2",
+    "symbolSize": "6",
+    "symbol": "emptyCircle",
+    "symbolBorderWidth": "2",
+    "lineSmooth": true,
+    "graphLineWidth": 1,
+    "graphLineColor": "#aaa",
+    "mapLabelColor": "#000000",
+    "mapLabelColorE": "#115599",
+    "mapBorderColor": "#516b91",
+    "mapBorderColorE": "#516b91",
+    "mapBorderWidth": 0.5,
+    "mapBorderWidthE": "1",
+    "mapAreaColor": "#f3f3f3",
+    "mapAreaColorE": "rgba(165,231,240,1)",
+    "axes": [
+      {
+        "type": "all",
+        "name": "通用坐标轴",
+        "axisLineShow": true,
+        "axisLineColor": "#f1f2f7",
+        "axisTickShow": true,
+        "axisTickColor": "#f1f2f7",
+        "axisLabelShow": true,
+        "axisLabelColor": "#9FA9BB",
+        "splitLineShow": false,
+        "splitLineColor": ["#f1f2f7"],
+        "splitAreaShow": false,
+        "splitAreaColor": ["rgba(250,250,250,0.05)", "rgba(200,200,200,0.02)"]
+      },
+      {
+        "type": "category",
+        "name": "类目坐标轴",
+        "axisLineShow": true,
+        "axisLineColor": "#F1F2F7",
+        "axisTickShow": true,
+        "axisTickColor": "#F1F2F7",
+        "axisLabelShow": true,
+        "axisLabelColor": "#9FA9BB",
+        "splitLineShow": false,
+        "splitLineColor": ["#ccc"],
+        "splitAreaShow": false,
+        "splitAreaColor": ["rgba(250,250,250,0.3)", "rgba(200,200,200,0.3)"]
+      },
+      {
+        "type": "value",
+        "name": "数值坐标轴",
+        "axisLineShow": true,
+        "axisLineColor": "#F1F2F7",
+        "axisTickShow": true,
+        "axisTickColor": "#F1F2F7",
+        "axisLabelShow": true,
+        "axisLabelColor": "#9FA9BB",
+        "splitLineShow": true,
+        "splitLineColor": ["#ccc"],
+        "splitAreaShow": false,
+        "splitAreaColor": ["rgba(250,250,250,0.3)", "rgba(200,200,200,0.3)"]
+      },
+      {
+        "type": "log",
+        "name": "对数坐标轴",
+        "axisLineShow": true,
+        "axisLineColor": "#F1F2F7",
+        "axisTickShow": true,
+        "axisTickColor": "#F1F2F7",
+        "axisLabelShow": true,
+        "axisLabelColor": "#9FA9BB",
+        "splitLineShow": true,
+        "splitLineColor": ["#ccc"],
+        "splitAreaShow": false,
+        "splitAreaColor": ["rgba(250,250,250,0.3)", "rgba(200,200,200,0.3)"]
+      },
+      {
+        "type": "time",
+        "name": "时间坐标轴",
+        "axisLineShow": true,
+        "axisLineColor": "#F1F2F7",
+        "axisTickShow": true,
+        "axisTickColor": "#F1F2F7",
+        "axisLabelShow": true,
+        "axisLabelColor": "#9FA9BB",
+        "splitLineShow": true,
+        "splitLineColor": ["#ccc"],
+        "splitAreaShow": false,
+        "splitAreaColor": ["rgba(250,250,250,0.3)", "rgba(200,200,200,0.3)"]
+      }
+    ],
+    "axisSeperateSetting": false,
+    "toolboxColor": "#888888",
+    "toolboxEmpasisColor": "#888888",
+    "tooltipAxisColor": "#cccccc",
+    "tooltipAxisWidth": "0",
+    "timelineLineColor": "#8fd3e8",
+    "timelineLineWidth": 1,
+    "timelineItemColor": "#8fd3e8",
+    "timelineItemColorE": "#8fd3e8",
+    "timelineCheckColor": "#8fd3e8",
+    "timelineCheckBorderColor": "rgba(138,124,168,0.37)",
+    "timelineItemBorderWidth": 1,
+    "timelineControlColor": "#8fd3e8",
+    "timelineControlBorderColor": "#8fd3e8",
+    "timelineControlBorderWidth": 0.5,
+    "timelineLabelColor": "#8fd3e8",
+    "datazoomBackgroundColor": "rgba(0,0,0,0)",
+    "datazoomDataColor": "rgba(255,255,255,0.3)",
+    "datazoomFillColor": "rgba(167,183,204,0.4)",
+    "datazoomHandleColor": "#a7b7cc",
+    "datazoomHandleWidth": "100",
+    "datazoomLabelColor": "#333333"
+  }
+}

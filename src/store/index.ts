@@ -1,16 +1,5 @@
-import Vue from 'vue';
-import Vuex from 'vuex';
+import { createPinia } from 'pinia';
 
-import app from '@/store/modules/app';
-import errorLog from '@/store/modules/errorLog';
-import getters from '@/store/getters';
+const store = createPinia();
 
-Vue.use(Vuex);
-
-export default new Vuex.Store({
-  modules: {
-    app,
-    errorLog,
-  },
-  getters,
-});
+export default store;

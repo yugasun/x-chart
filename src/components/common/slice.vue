@@ -1,151 +1,108 @@
 <template>
-    <div
-        ref="container"
-        class="slice-wrapper"
-    >
+    <div ref="container" class="slice-wrapper">
         <header
             ref="header"
             class="card-header"
-            :class="{center: item.chartType === 'x-number'}"
+            :class="{ center: item.chartType === 'x-number' }"
         >
-            <span
-                class="card-title"
-                v-if="item.chartType !== 'x-number'"
-            >{{ item.title }}</span>
+            <span class="card-title" v-if="item.chartType !== 'x-number'">{{
+                item.title
+            }}</span>
             <div class="right-buttons">
                 <legend-btn
-                    class="x-btn"
                     v-if="canLegendType.indexOf(item.chartType) !== -1"
-                    :legend.sync="legend"
+                    v-model:legend="legend"
+                    class="x-btn"
                 />
                 <sync-btn
                     class="x-btn"
-                    @sync="getData"
                     :white="item.chartType === 'x-number'"
+                    @sync="getData"
                 />
                 <expand-btn
                     class="x-btn"
-                    @expand="handleFocus"
-                    :expand-target="item.i"
                     :white="item.chartType === 'x-number'"
+                    @expand="handleFocus"
                 />
             </div>
         </header>
         <component
+            :is="chartComponentMap[item.chartType]"
             :loading="loading"
-            :is="ChartComponentMap[item.chartType]"
             :legend="legend"
             :api-data="apiData"
             :title="item.title"
-            :colorStart="colorStart"
-            :colorEnd="colorEnd"
             :width="item.width"
             :height="item.height"
             @init="chartInit"
         />
     </div>
 </template>
-<script lang="ts">
+<script lang="ts" setup>
+import { onMounted, ref } from 'vue';
+import API from '@/api';
 import ExpandBtn from '@/components/common/expand-btn.vue';
 import LegendBtn from '@/components/common/legend-btn.vue';
 import SyncBtn from '@/components/common/sync-btn.vue';
 
-import {
-  XLine,
-  XLineArea,
-  XBar,
-  XHbar,
-  XPie,
-  XCircle,
-  XNumber,
-} from '@/components/charts';
-
 import ChartComponentMap from '@/config/chart-component-map';
 
-import { Vue, Component, Prop } from 'vue-property-decorator';
+import { ApiData, ChartInitPayload, SliceItem } from '@/types/interfaces';
 
-import { ApiData, ExpandPayload, ChartInitPayload } from '@/types/interfaces';
+const props = defineProps<{
+    item: SliceItem;
+}>();
+const emit = defineEmits(['expand']);
 
-@Component({
-  components: {
-    XLine,
-    XLineArea,
-    XBar,
-    XHbar,
-    XPie,
-    XCircle,
-    XNumber,
-    ExpandBtn,
-    LegendBtn,
-    SyncBtn,
-  },
-})
-export default class Slice extends Vue {
-    @Prop({ default: {} })
-    item!: any;
+const loading = ref(true);
+const chart = ref(null);
+const legend = ref(true);
+// const chartData = ref<ApiData>({ columns: [], rows: [] });
+const apiData = ref<ApiData | null>(null);
+const chartComponentMap = ref(ChartComponentMap);
+const canLegendType = ref([
+    'x-line',
+    'x-line-area',
+    'x-bar',
+    'x-hbar',
+    'x-pie',
+    'x-circle',
+]);
 
-    @Prop({ default: '#7956EC' })
-    colorStart!: string;
-
-    @Prop({ default: '#3CECCF' })
-    colorEnd!: string;
-
-    loading: boolean = true;
-
-    chart: any = null;
-
-    chartData: ApiData = { columns: [], rows: [] };
-
-    legend: boolean = true;
-
-    // whether show legen
-    apiData: any = null;
-
-    ChartComponentMap: any = ChartComponentMap;
-
-    canLegendType: string[] = [
-      'x-line',
-      'x-line-area',
-      'x-bar',
-      'x-hbar',
-      'x-pie',
-      'x-circle',
-    ];
-
-    async getData() {
-      this.loading = true;
-      try {
-        const res = await this.$http.get('/chart_data', {
-          sliceId: this.item.sliceId,
-          chartType: this.item.chartType,
+async function getData() {
+    loading.value = true;
+    try {
+        const result = await API.getChartData({
+            sliceId: props.item.sliceId,
+            chartType: props.item.chartType,
         });
-
-        this.apiData = res.data;
-      } catch (e) {
+        apiData.value = result.data;
+    } catch (e) {
         console.error(e);
-      }
-      this.loading = false;
     }
-
-    /**
-     * handle focus click
-     */
-    handleFocus(payload: ExpandPayload) {
-      this.$emit('expand', payload);
-    }
-
-    /**
-     * chart initialed
-     */
-    chartInit(payload: ChartInitPayload) {
-      this.chart = payload.chart;
-      this.chartData = payload.chartData;
-    }
-
-    mounted() {
-      this.getData();
-    }
+    loading.value = false;
 }
+
+/**
+ * handle focus click
+ */
+function handleFocus(val: boolean) {
+    emit('expand', {
+        expand: val,
+        targetId: props.item.sliceId,
+    });
+}
+
+/**
+ * chart initialed
+ */
+function chartInit(payload: ChartInitPayload) {
+    chart.value = payload.chart;
+}
+
+onMounted(() => {
+    getData();
+});
 </script>
 <style lang="scss" scoped>
 .slice-wrapper {
