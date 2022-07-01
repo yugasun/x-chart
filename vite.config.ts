@@ -10,7 +10,10 @@ import replace from '@rollup/plugin-replace';
 const pwaOptions: Partial<VitePWAOptions> = {
     mode: 'development',
     base: '/',
-    includeAssets: ['favicon.svg'],
+    includeAssets: ['favicon.ico'],
+    workbox: {
+        globIgnores: ['mockServiceWorker.js'],
+    },
     manifest: {
         name: 'X-Chart',
         short_name: 'x-chart',
@@ -46,23 +49,18 @@ const replaceOptions = {
     __DATE__: new Date().toISOString(),
     __RELOAD_SW__: '',
 };
-const claims = process.env.CLAIMS === 'true';
-const reload = process.env.RELOAD_SW === 'true';
 
 if (process.env.SW === 'true') {
     pwaOptions.srcDir = 'src';
-    pwaOptions.filename = claims ? 'claims-sw.ts' : 'prompt-sw.ts';
+    pwaOptions.filename = 'claims-sw.ts';
     pwaOptions.strategies = 'injectManifest';
     (pwaOptions.manifest as Partial<ManifestOptions>).name =
         'PWA Inject Manifest';
     (pwaOptions.manifest as Partial<ManifestOptions>).short_name = 'PWA Inject';
 }
 
-if (claims) pwaOptions.registerType = 'autoUpdate';
-
-if (reload) {
-    replaceOptions.__RELOAD_SW__ = 'true';
-}
+pwaOptions.registerType = 'autoUpdate';
+replaceOptions.__RELOAD_SW__ = 'true';
 
 // https://vitejs.dev/config/
 export default defineConfig({
