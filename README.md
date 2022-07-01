@@ -69,7 +69,7 @@ pnpm run docker:exec
 
 ![x-chart](./demo/1.png)
 
-[Online Preview](http://yugasun.github.io/x-chart/).
+[Online Preview](https://x-chart.vercel.app/).
 
 ## Notice
 
